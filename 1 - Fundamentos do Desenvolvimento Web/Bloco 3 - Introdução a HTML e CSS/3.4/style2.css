@@ -1,24 +1,38 @@
-.header { 
+header, nav { 
     background-color:#FFABD5;
-}
-
-.header { 
     text-align: center;
 }
 
-.header ul { 
+nav ul { 
     background-color: blueviolet;
 }
 
-.header li { 
+nav li { 
     display: inline;
 }
 
-.header a {
+nav a {
     color: white;
     font;
 }
 
-.aside { 
-    float: right;
+aside {
+    text-align: center;
+    border: #FFABD5 solid 1.5px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+aside ul {
+    list-style-position: inside;
+    padding: 0px 10px;
+    text-align: left;
+}
+
+article {
+    display: inline-block;
+    max-width: 60%;
 }
