@@ -23,7 +23,7 @@ aside {
     vertical-align: top;
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
+    max-width: 15%;
 }
 
 aside ul {
@@ -34,5 +34,5 @@ aside ul {
 
 article {
     display: inline-block;
-    max-width: 60%;
+    max-width: 84%;
 }
