@@ -94,3 +94,10 @@ if ( c % 2 === 0 || d % 2 === 0 || e % 2 === 0 ) {
 } else { 
     console.log("Não é par")
 }
+
+/* Item 9: */
+if ( c % 2 !== 0 || d % 2 !== 0 || e % 2 !== 0 ) { 
+    console.log("É ímpar")
+} else { 
+    console.log("Não é ímpar")
+}
