@@ -37,3 +37,12 @@ else if ( c < d ) {
         console.log(c)
     }
 }
+
+/* Item 4: */
+if ( a > 0 ) { 
+    console.log("positive")
+} if else ( a < 0 ) { 
+    console.log("negative")
+} else { 
+    console.log("zero")
+}
