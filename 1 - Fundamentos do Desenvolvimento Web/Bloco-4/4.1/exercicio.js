@@ -41,17 +41,32 @@ else if ( c < d ) {
 /* Item 4: */
 if ( a > 0 ) { 
     console.log("positive")
-} if else ( a < 0 ) { 
+} else if ( a < 0 ) { 
     console.log("negative")
 } else { 
     console.log("zero")
 }
 
 /* Item 5: */
-if ( a + b + c = 180 && a > 0 && b > 0 && c > 0) { 
+if ( a + b + c === 180 && a > 0 && b > 0 && c > 0) { 
     console.log(true)
 } else { 
     console.log("Esse ângulos não formam um triângulo")
 }
 
 /* Item 6: */
+let peça = "Horse";
+
+if (peça.toLowerCase() === "tower") { 
+    console.log(peça + " pode andar para frente, para trás e para os lados, quantas casas quiser.")
+} else if (peça.toLowerCase() === "horse") { 
+    console.log(peça + " pode andar em L.")
+} else if (peça.toLowerCase() === "bishop") { 
+    console.log(peça + " pode andar pelas diagonais, quantas casas quiser.")
+}  else if (peça.toLowerCase() === "queen") { 
+    console.log(peça + " pode andar para frente, para trás, para os lados e para as diagonais, quantas casas quiser.")
+}  else if (peça.toLowerCase() === "king") { 
+    console.log(peça + " pode andar para frente, para trás, para os lados e para as diagonais, mas somente uma casa.")
+}  else if (peça.toLowerCase() === "pawn") { 
+    console.log(peça + " pode andar para frente somente uma casa e comer as peças na diagonal. No primeiro movimento, pode andar duas casas.")
+} 
