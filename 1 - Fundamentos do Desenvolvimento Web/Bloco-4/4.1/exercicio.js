@@ -46,3 +46,10 @@ if ( a > 0 ) {
 } else { 
     console.log("zero")
 }
+
+/* Item 5: */
+if ( a + b + c = 180 ) { 
+    console.log(true)
+} else { 
+    console.log("Esse ângulos não formam um triângulo")
+}
