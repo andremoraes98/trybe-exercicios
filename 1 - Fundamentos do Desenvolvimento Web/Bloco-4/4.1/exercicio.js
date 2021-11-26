@@ -87,3 +87,10 @@ if ( a >= 90 ) {
 } else {
     console.log("Nota inválida");
 }
+
+/* Item 8: */
+if ( c % 2 === 0 || d % 2 === 0 || e % 2 === 0 ) { 
+    console.log("É par")
+} else { 
+    console.log("Não é par")
+}
