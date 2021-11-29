@@ -74,7 +74,7 @@ if (numerosImpares === 0) {
 }
 
 
-Item 7: Imprimir o menor valor do vetor*/
+Item 7: Imprimir o menor valor do vetor
 let menorNumero, contador = 0;
 
 for ( let indice = 0; indice < numbers.length; indice += 1 ) {
@@ -89,3 +89,13 @@ for ( let indice = 0; indice < numbers.length; indice += 1 ) {
     }
     contador = 0;
 }
+
+
+Item 8: Imprimir o menor valor do vetor*/
+let naturais = [];
+
+for (let index = 1; index <= 25; index+=1) {
+    naturais.push(index);
+}
+
+console.log(naturais)
