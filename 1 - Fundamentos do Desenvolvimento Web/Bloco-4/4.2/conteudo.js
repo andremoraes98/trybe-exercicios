@@ -19,9 +19,16 @@
 
     console.log(menu);
 
-Exercício (lopp For): */
+Exercício (lopp For):
     let groceryList = ['Arroz', 'Feijão', 'Alface', 'Melancia'];
 
     for ( indice = 0; indice < groceryList.length; indice += 1 ) {
         console.log(groceryList[indice])
+    }
+
+Exercício (for/of): */
+    let names = ['João', 'Maria', 'Antônio', 'Margarida'];
+
+    for ( name of names ) {
+        console.log(name)
     }
