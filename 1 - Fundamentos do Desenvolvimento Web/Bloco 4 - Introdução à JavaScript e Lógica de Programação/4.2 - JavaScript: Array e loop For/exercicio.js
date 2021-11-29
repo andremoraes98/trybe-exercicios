@@ -42,7 +42,7 @@ if ( contador/numbers.length > 20 ) {
 
 
 Item 5: Imprimir o maior valor do vetor
-let maiorNumero, contador = 0;
+let contador = 0;
 
 for ( let indice = 0; indice < numbers.length; indice += 1 ) {
     for ( let numero = 0; numero < numbers.length; numero += 1 ) {
@@ -56,6 +56,16 @@ for ( let indice = 0; indice < numbers.length; indice += 1 ) {
     }
     contador = 0;
 }
+
+let maiorNumero = 0;
+
+for ( let indice = 0; indice < numbers.length; indice += 1 ) {
+    if ( maiorNumero < numbers[indice] ) { 
+        maiorNumero = numbers[indice];
+    }
+}
+
+console.log(maiorNumero)
 
 
 Item 6: Imprimir a quantidade de números ímpares do vetor
