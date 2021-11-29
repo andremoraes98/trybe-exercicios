@@ -74,7 +74,7 @@ if (numerosImpares === 0) {
 }
 
 
-Item 7: Imprimir a quantidade de números ímpares do vetor*/
+Item 7: Imprimir o menor valor do vetor*/
 let menorNumero, contador = 0;
 
 for ( let indice = 0; indice < numbers.length; indice += 1 ) {
