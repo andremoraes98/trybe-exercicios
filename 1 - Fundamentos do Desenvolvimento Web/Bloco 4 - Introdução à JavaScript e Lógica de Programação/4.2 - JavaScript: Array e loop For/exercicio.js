@@ -91,11 +91,20 @@ for ( let indice = 0; indice < numbers.length; indice += 1 ) {
 }
 
 
-Item 8: Imprimir o menor valor do vetor*/
+Item 8: Imprimir os numeros de 1 a 25 e imprimir o resultado*/
 let naturais = [];
 
 for (let index = 1; index <= 25; index+=1) {
     naturais.push(index);
 }
 
-console.log(naturais)
+/*console.log(naturais)
+
+
+ Item 9: Imprimir os numeros de 1 a 25 e imprimir o resultado */
+ 
+ for( let index = 0; index < naturais.length; index += 1 ) {
+     naturais[index] = naturais[index]/2
+ }
+
+ console.log(naturais)
