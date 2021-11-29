@@ -70,3 +70,34 @@ if (peça.toLowerCase() === "tower") {
 }  else if (peça.toLowerCase() === "pawn") { 
     console.log(peça + " pode andar para frente somente uma casa e comer as peças na diagonal. No primeiro movimento, pode andar duas casas.")
 } 
+
+/* Item 7: */
+if ( a >= 90 ) { 
+    console.log("A");
+} else if ( a >= 80 ) {
+    console.log("B");
+} else if ( a >= 70 ) {
+    console.log("C");
+} else if ( a >= 60 ) {
+    console.log("D");
+} else if ( a >= 50 ) {
+    console.log("E");
+} else if ( a >= 0 ) {
+    console.log("F");
+} else {
+    console.log("Nota inválida");
+}
+
+/* Item 8: */
+if ( c % 2 === 0 || d % 2 === 0 || e % 2 === 0 ) { 
+    console.log("É par")
+} else { 
+    console.log("Não é par")
+}
+
+/* Item 9: */
+if ( c % 2 !== 0 || d % 2 !== 0 || e % 2 !== 0 ) { 
+    console.log("É ímpar")
+} else { 
+    console.log("Não é ímpar")
+}
