@@ -58,7 +58,7 @@ for ( let indice = 0; indice < numbers.length; indice += 1 ) {
 }
 
 
-Item 6: Imprimir a quantidade de números ímpares do vetor*/
+Item 6: Imprimir a quantidade de números ímpares do vetor
 let numerosImpares = 0
 
 for ( let index = 0; index < numbers.length; index += 1 ) {
@@ -71,4 +71,21 @@ if (numerosImpares === 0) {
     console.log("Não tem números ímpares");
 } else {
     console.log("A quantidade de números ímpares é:", numerosImpares)
+}
+
+
+Item 7: Imprimir a quantidade de números ímpares do vetor*/
+let menorNumero, contador = 0;
+
+for ( let indice = 0; indice < numbers.length; indice += 1 ) {
+    for ( let numero = 0; numero < numbers.length; numero += 1 ) {
+        if ( numbers[indice] < numbers[numero] ) {
+            contador += 1;
+        }
+        if ( contador === 9 ) { 
+            console.log(numbers[indice])
+            break;
+        }
+    }
+    contador = 0;
 }
