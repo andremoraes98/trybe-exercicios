@@ -1,0 +1,2 @@
+quando index for 0, eu vou querer inicializar o vetor com o * no meio e imprimir ele.
+quando index for 1, eu vou querer colocar 
