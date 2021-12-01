@@ -81,5 +81,9 @@
 
 /* Item 5: Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário */
     function isTriangle (a, b, c) {
-
+        if ( a + b + c === 180 && a > 0 && b > 0 && c > 0) { 
+            return(true)
+        } else { 
+            return("Esse ângulos não formam um triângulo")
+        }
     }
