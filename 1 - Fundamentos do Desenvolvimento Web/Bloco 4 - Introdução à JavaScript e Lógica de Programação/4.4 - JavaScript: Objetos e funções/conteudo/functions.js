@@ -36,34 +36,45 @@
     }
 
 /* Item 2:  retorne o maior entre dois números*/
-function maior (a, b) {
-    if (a > b) { 
-        return(a);
-    } else { 
-        return(b);
+    function maior2 (a, b) {
+        if (a > b) { 
+            return(a);
+        } else { 
+            return(b);
+        }
     }
-}
 
 /* Item 3:  retorne o maior entre três números*/
-function maior (c, d, e) {
-    if( c > d ) {
-        if ( c > e ) { 
-            return(c);
-        } else {
-            return(e);
+    function maior3 (c, d, e) {
+        if( c > d ) {
+            if ( c > e ) { 
+                return(c);
+            } else {
+                return(e);
+            }
+        }
+        else if ( c < d ) { 
+            if ( d > e ) { 
+                return(d);
+            } else { 
+                return(e);
+            }
+        } else { 
+            if ( c < e ) { 
+                return(e)
+            } else { 
+                return(c)
+            }
         }
     }
-    else if ( c < d ) { 
-        if ( d > e ) { 
-            return(d);
+
+/* Item 4: Retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário */
+    function sinal (a) {
+        if ( a > 0 ) { 
+            return("positive")
+        } else if ( a < 0 ) { 
+            return("negative")
         } else { 
-            return(e);
-        }
-    } else { 
-        if ( c < e ) { 
-            return(e)
-        } else { 
-            return(c)
+            return("zero")
         }
     }
-}
