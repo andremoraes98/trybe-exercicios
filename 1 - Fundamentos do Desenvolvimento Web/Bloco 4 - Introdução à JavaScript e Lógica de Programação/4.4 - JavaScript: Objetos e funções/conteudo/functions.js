@@ -43,3 +43,27 @@ function maior (a, b) {
         return(b);
     }
 }
+
+/* Item 3:  retorne o maior entre três números*/
+function maior (c, d, e) {
+    if( c > d ) {
+        if ( c > e ) { 
+            return(c);
+        } else {
+            return(e);
+        }
+    }
+    else if ( c < d ) { 
+        if ( d > e ) { 
+            return(d);
+        } else { 
+            return(e);
+        }
+    } else { 
+        if ( c < e ) { 
+            return(e)
+        } else { 
+            return(c)
+        }
+    }
+}
