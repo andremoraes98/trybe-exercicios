@@ -20,3 +20,8 @@ let player = {
 
 console.log("A jogadora " + player.name + " " + player.lastName + " tem " + player.age + " anos de idade")
 
+/* Item 3: Adicione ao objeto a chave bestInTheWorld e atribua a esta chave um array contendo as datas em que a jogadora Marta foi considerada a melhor do mundo. */
+
+/* Item 4: Acesse a chave bestInTheWorld e faça um console.log no seguinte formato: "A jogadora Marta Silva foi eleita a melhor do mundo por 6 vezes". */
+
+console.log("A jogadora " + player.name + " " + player.lastName + " foi eleita a melhor do mundo por " + player.bestInTheWorld.length + " vezes.")
