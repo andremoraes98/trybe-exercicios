@@ -11,3 +11,9 @@ console.log("Bem vinda,", info.personagem)
 info['recorrente'] = 'Sim'
 
 console.log(info)
+
+/* Item 3: Faça um for/in que mostre todas as chaves do objeto */
+
+for ( let key in info ) {
+    console.log(key)
+}
