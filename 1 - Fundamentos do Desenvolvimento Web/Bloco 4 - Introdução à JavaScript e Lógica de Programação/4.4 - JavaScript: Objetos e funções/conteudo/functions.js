@@ -1,36 +1,45 @@
 /* Item 1: */
 
-// Adição:
-function adicao (a, b) {
-    let sum;
-    sum = a + b;
-    return sum
-}
+    // Adição:
+    function adicao (a, b) {
+        let sum;
+        sum = a + b;
+        return sum
+    }
 
-// Subtração (a - b)
-function adicao (a, b) {
-    let sub;
-    sub = a - b;
-    return sub
-}
+    // Subtração (a - b)
+    function adicao (a, b) {
+        let sub;
+        sub = a - b;
+        return sub
+    }
 
-// Multiplicação (a * b)
-function multiplicacao (a, b) {
-    let mult;
-    mult = a * b
-    return mult
-}
+    // Multiplicação (a * b)
+    function multiplicacao (a, b) {
+        let mult;
+        mult = a * b
+        return mult
+    }
 
-// Divisão (a / b)
-function divisao (a, b) {
-    let div;
-    div = a / b
-    return div
-}
+    // Divisão (a / b)
+    function divisao (a, b) {
+        let div;
+        div = a / b
+        return div
+    }
 
-// Módulo (a % b)
-function modulo (a, b) {
-    let mod;
-    mod = a % b
-    return mod 
+    // Módulo (a % b)
+    function modulo (a, b) {
+        let mod;
+        mod = a % b
+        return mod 
+    }
+
+/* Item 2:  retorne o maior entre dois números*/
+function maior (a, b) {
+    if (a > b) { 
+        return(a);
+    } else { 
+        return(b);
+    }
 }
