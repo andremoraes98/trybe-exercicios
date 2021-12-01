@@ -68,4 +68,6 @@ Item 5: Defina um segundo objeto com a mesma estrutura (as mesmas chaves) do pri
         ],
     };
 
-    console.log(leitor)
+/* Item 8: Acesse as chaves nome e livrosFavoritos e faça um console.log no seguinte formato: "Julia tem 2 livros favoritos" */
+
+console.log("Julia tem", leitor.livrosFavoritos.length, "livros favoritos.")
