@@ -13,6 +13,8 @@
     document.querySelector(".center-content").style.backgroundColor = "white"
 
     //4. Crie uma função que corrija o texto da tag <h1>.
+    document.querySelector("h1").innerText = "Exercício 5.1 - JavaScript"
+
     //5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
     //6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
     
