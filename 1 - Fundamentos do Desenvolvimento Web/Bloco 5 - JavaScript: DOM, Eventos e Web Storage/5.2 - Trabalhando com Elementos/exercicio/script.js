@@ -6,15 +6,20 @@ function creatTag (text, tag) {
 }
 
 function insertChildOn (parent, child) {
-    parent.appendChild(child)
+    return parent.appendChild(child)
 }
 
-insertChildOn(document.querySelector('body'), creatTag('Exercício 5.2 - JavaScript DOM','h1'))
+function getHTMLTAG (tag) {
+    return document.querySelector(tag)
+}
+
+insertChildOn(getHTMLTAG('body'), creatTag('Exercício 5.2 - JavaScript DOM','h1'))
 
 // 2 - Adicione a tag main com a classe main-content como filho da tag body
-function insertClassOn (class, tag) {
 
-}
+insertChildOn(getHTMLTAG('body'),creatTag('','main'))
+
+document.querySelector('main').className = 'main-content'
 
 // Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
 // Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
