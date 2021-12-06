@@ -7,8 +7,14 @@ sibilingElementoOndeVoceEsta.innerText = "Irmão do elementoOndeVoceEsta"
 
 paiElementoOndeVoceEsta.appendChild(sibilingElementoOndeVoceEsta)
 
-console.log(sibilingElementoOndeVoceEsta)
-
 // 2 - Crie um filho para elementoOndeVoceEsta
+let elementoOndeVoceEsta = document.querySelector("#elementoOndeVoceEsta")
+
+let childOfElementoOndeVoceEsta = document.createElement("p")
+
+childOfElementoOndeVoceEsta.innerText = "Filho do elementoOndeVoceEsta"
+
+elementoOndeVoceEsta.appendChild(childOfElementoOndeVoceEsta)
+
 // 3 - Crie um filho para primeiroFilhoDoFilho
 // 4 - A partir desse filho criado, acesse terceiroFilho
