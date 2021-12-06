@@ -48,9 +48,6 @@ insertChildOn(getSpecificHTMLTag('section', 3), creatTag('', 'img', 'small-image
 getHTMLTag('img').setAttribute("src", "https://picsum.photos/200")
 
 // 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
-
-
-
 insertChildOn(getSpecificHTMLTag('section', 3), creatTag('', 'ul', ''))
 
 for ( let index = 0; index < 10; index += 1 ) {
@@ -58,5 +55,8 @@ for ( let index = 0; index < 10; index += 1 ) {
     console.log(getHTMLTag('ul'))
 }
 
-
-// Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+// 9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+for ( let index = 0; index < 3; index += 1 ) {
+    let frase = "Sou a tag H3, filho do 'main', número: " + parseFloat(index + 1)
+    insertChildOn(getHTMLTag('main'), creatTag(frase, 'h3', ''))
+}
