@@ -17,4 +17,12 @@ childOfElementoOndeVoceEsta.innerText = "Filho do elementoOndeVoceEsta"
 elementoOndeVoceEsta.appendChild(childOfElementoOndeVoceEsta)
 
 // 3 - Crie um filho para primeiroFilhoDoFilho
+let primeiroFilhoDoFilho = document.querySelector("#primeiroFilhoDoFilho")
+
+let childOfPrimeiroFilhoDoFilho = document.createElement("p")
+
+childOfPrimeiroFilhoDoFilho.innerText = "Filho do primeiroFilhoDoFilho"
+
+primeiroFilhoDoFilho.appendChild(childOfPrimeiroFilhoDoFilho)
+
 // 4 - A partir desse filho criado, acesse terceiroFilho
