@@ -2,7 +2,9 @@
 function creatTag (text, tag, classe) {
     let element = document.createElement(tag)
     element.innerText = text
-    element.className = classe
+    if ( classe != '' ) {
+        element.className = classe
+    }
     return element
 }
 
@@ -45,5 +47,16 @@ insertChildOn(getSpecificHTMLTag('section', 3), creatTag('', 'img', 'small-image
 
 getHTMLTag('img').setAttribute("src", "https://picsum.photos/200")
 
-// Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+// 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+
+
+
+insertChildOn(getSpecificHTMLTag('section', 3), creatTag('', 'ul', ''))
+
+for ( let index = 0; index < 10; index += 1 ) {
+    insertChildOn(getHTMLTag('ul'), creatTag(index, 'li', ''))
+    console.log(getHTMLTag('ul'))
+}
+
+
 // Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
