@@ -26,3 +26,4 @@ childOfPrimeiroFilhoDoFilho.innerText = "Filho do primeiroFilhoDoFilho"
 primeiroFilhoDoFilho.appendChild(childOfPrimeiroFilhoDoFilho)
 
 // 4 - A partir desse filho criado, acesse terceiroFilho
+console.log(document.querySelector("p").parentNode.parentNode.nextElementSibling)
