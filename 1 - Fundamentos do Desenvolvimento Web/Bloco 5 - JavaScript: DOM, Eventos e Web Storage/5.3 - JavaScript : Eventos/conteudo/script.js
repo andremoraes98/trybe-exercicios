@@ -15,20 +15,19 @@ const myWebpage = document.getElementById('my-spotrybefy');
 
 let clickLi = document.querySelectorAll('li')
 
-function selectTagNodeList (incidencia) {
-    let element = clickLi[incidencia - 1]
-    return element
+for (let index = 0; index < clickLi.length; index += 1 ) {
+    clickLi[index].addEventListener("click", adicionaClasseTech)
 }
 
-selectTagNodeList(3).addEventListener("click", adicionaClasseTech)
-selectTagNodeList(3).addEventListener("mouseleave", removeClasseTech)
-
 function adicionaClasseTech (event) {
+    for (let index = 0; index < clickLi.length; index += 1 ) {
+        clickLi[index].className -= "tech"
+    }
     event.target.className = "tech"
 }
 
-function removeClasseTech (event) {
-    event.target.className -= "tech"
+function identificaALi (event) {
+
 }
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
