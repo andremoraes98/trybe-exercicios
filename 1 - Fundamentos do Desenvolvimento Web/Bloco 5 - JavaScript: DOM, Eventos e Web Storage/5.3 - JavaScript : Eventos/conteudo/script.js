@@ -21,9 +21,14 @@ function selectTagNodeList (incidencia) {
 }
 
 selectTagNodeList(3).addEventListener("click", adicionaClasseTech)
+selectTagNodeList(3).addEventListener("mouseleave", removeClasseTech)
 
-function adicionaClasseTech (eventoDeOrigem) {
-    eventoDeOrigem.target.className = "tech"
+function adicionaClasseTech (event) {
+    event.target.className = "tech"
+}
+
+function removeClasseTech (event) {
+    event.target.className -= "tech"
 }
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
