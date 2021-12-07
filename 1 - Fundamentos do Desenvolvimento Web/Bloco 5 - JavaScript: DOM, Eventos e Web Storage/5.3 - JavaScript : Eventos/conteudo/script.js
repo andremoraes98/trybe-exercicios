@@ -21,7 +21,7 @@ for (let index = 0; index < clickLi.length; index += 1 ) {
 
 function adicionaClasseTech (event) {
     for (let index = 0; index < clickLi.length; index += 1 ) {
-        clickLi[index].className -= "tech"
+        clickLi[index].removeAttribute('class')
     }
     event.target.className = "tech"
 }
@@ -33,7 +33,15 @@ function identificaALi (event) {
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
-input.addEventListener("", adicionaClasseTech)
+input.addEventListener("change", adicionaClasseTech)
+
+function mudaTexto () {
+    for (let index = 0; index < clickLi.length; index += 1 ) {
+        if ( clickLi[index].className === "tech" ) {
+            
+        }
+    }
+}
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
