@@ -34,13 +34,11 @@ function identificaALi (event) {
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
-input.addEventListener("change", adicionaClasseTech)
+input.addEventListener("keyup", mudaTexto)
 
 function mudaTexto () {
     for (let index = 0; index < clickLi.length; index += 1 ) {
-        if ( clickLi[index].className === "tech" ) {
-            
-        }
+        document.querySelector(".tech").innerText = input.value
     }
 }
 
