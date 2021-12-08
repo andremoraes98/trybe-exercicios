@@ -23,3 +23,14 @@ function changeTextColor () {
         tagP[index].style.color = input.value
     }
 }
+
+// 3 - altera o tamanho da fonte
+buttonTextSize.addEventListener("click", changeTextSize)
+
+function changeTextSize () {
+    let input = document.querySelector("#sizeInput")
+    let tagP = document.querySelectorAll('p')
+    for (let index = 0; index < tagP.length; index += 1 ) {
+        tagP[index].style.fontSize = input.value + "px"
+    }
+}
