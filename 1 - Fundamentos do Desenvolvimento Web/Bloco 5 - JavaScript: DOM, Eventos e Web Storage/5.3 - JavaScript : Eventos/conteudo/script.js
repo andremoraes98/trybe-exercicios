@@ -49,7 +49,7 @@ function mudaTexto () {
 myWebpage.addEventListener("dblclick", abrePortifolio)
 
 function abrePortifolio() {
-
+    window.open("https://github.com/andremoraes98/andremoraes98.github.io")
 }
 
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
