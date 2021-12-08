@@ -19,6 +19,7 @@ for (let index = 0; index < clickLi.length; index += 1 ) {
     clickLi[index].addEventListener("click", adicionaClasseTech)
 }
 
+
 function adicionaClasseTech (event) {
     for (let index = 0; index < clickLi.length; index += 1 ) {
         clickLi[index].removeAttribute('class')
