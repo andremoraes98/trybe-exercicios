@@ -43,4 +43,22 @@ function addButton (string) {
 }
 addButton("Feriados");
 
-console.log(document.querySelector(".buttons-container"))
+// 3 - Evento adicionado ao butão que, quando clicado, mude o background color dos feriados
+
+let feriados = false, btn = document.querySelector('#btn-holiday'), holidays = document.querySelectorAll(".holiday")
+
+btn.addEventListener("click", addColorHoliday)
+
+function addColorHoliday () {
+  if ( feriados ) {
+    for (let index = 0; index < holidays.length; index += 1 ) {
+      holidays[index].style.backgroundColor = "rgb(238,238,238)"
+    }
+    feriados = false;
+  } else {
+    for (let index = 0; index < holidays.length; index += 1 ) {
+      holidays[index].style.backgroundColor = "pink"
+    }
+    feriados = true;
+  }
+}
