@@ -116,7 +116,6 @@ function zoomOut (event) {
 }
 
 // 7 - Criar as tasks
-
 let btnAddTask = document.querySelector("#btn-add")
 
 btnAddTask.addEventListener("click", creatTask)
@@ -127,4 +126,14 @@ function creatTask (task) {
   taskListItem.innerText = input.value
   
   taskList.appendChild(taskListItem)
+}
+
+// 8 - Criar legenda para as tasks
+function creatBackgroundTask (color) {
+  let taskList = document.querySelector(".my-tasks"), taskListStyle = document.createElement("div")
+
+  taskListStyle.className = "task"
+  taskListStyle.style.backgroundColor = color
+  
+  taskList.appendChild(taskListStyle)
 }
