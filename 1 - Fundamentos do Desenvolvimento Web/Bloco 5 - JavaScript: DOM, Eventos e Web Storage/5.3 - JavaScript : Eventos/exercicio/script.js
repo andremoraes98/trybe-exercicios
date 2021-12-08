@@ -114,3 +114,17 @@ function zoomIn (event) {
 function zoomOut (event) {
   event.target.style.fontSize = "20px"
 }
+
+// 7 - Criar as tasks
+
+let btnAddTask = document.querySelector("#btn-add")
+
+btnAddTask.addEventListener("click", creatTask)
+
+function creatTask (task) {
+  let taskList = document.querySelector(".my-tasks"), taskListItem = document.createElement("span"), input = document.querySelector("input")
+
+  taskListItem.innerText = input.value
+  
+  taskList.appendChild(taskListItem)
+}
