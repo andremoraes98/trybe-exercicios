@@ -66,10 +66,51 @@ function addColorHoliday () {
 // 4 - Acrescentar o botão com o nome "Sexta-feira" através de uma function
 function addButtonFriday (string) {
   let divParent = document.querySelector(".buttons-container")
-  let buttonHoliday = document.createElement("button")
-  buttonHoliday.innerText = string
-  buttonHoliday.id = "btn-friday"
+  let buttonFriday = document.createElement("button")
+  buttonFriday.innerText = string
+  buttonFriday.id = "btn-friday"
 
-  divParent.appendChild(buttonHoliday)
+  divParent.appendChild(buttonFriday)
 }
 addButtonFriday("Sexta-feira");
+
+// 5 - Evento adicionado ao butão que, quando clicado, mude o background color dos feriados
+
+let sexta = false
+btn = document.querySelector('#btn-friday')
+friday = document.querySelectorAll(".friday")
+
+btn.addEventListener("click", addColorFriday)
+
+function addColorFriday () {
+  if ( feriados ) {
+    for (let index = 0; index < friday.length; index += 1 ) {
+      friday[index].style.backgroundColor = "rgb(238,238,238)"
+    }
+    feriados = false;
+  } else {
+    for (let index = 0; index < friday.length; index += 1 ) {
+      friday[index].style.backgroundColor = "DeepSkyBlue"
+    }
+    feriados = true;
+  }
+}
+
+// 6 - Dar zoom nos dias do calendário
+let days = document.querySelectorAll(".day")
+
+for (let index = 0; index < days.length; index += 1 ) {
+  days[index].addEventListener("mouseover", zoomIn)
+}
+
+for (let index = 0; index < days.length; index += 1 ) {
+  days[index].addEventListener("mouseleave", zoomOut)
+}
+
+function zoomIn (event) {
+  event.target.style.fontSize = "40px"
+}
+
+function zoomOut (event) {
+  event.target.style.fontSize = "20px"
+}
