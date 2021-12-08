@@ -33,7 +33,7 @@ function createDaysOfTheWeek() {
     ulListDays.appendChild(dayItemList)
   }
 // 2 - Acrescentar o botão com o nome "Feriados" através de uma function
-function addButton (string) {
+function addButtonHoliday (string) {
   let divParent = document.querySelector(".buttons-container")
   let buttonHoliday = document.createElement("button")
   buttonHoliday.innerText = string
@@ -41,7 +41,7 @@ function addButton (string) {
 
   divParent.appendChild(buttonHoliday)
 }
-addButton("Feriados");
+addButtonHoliday("Feriados");
 
 // 3 - Evento adicionado ao butão que, quando clicado, mude o background color dos feriados
 
@@ -62,3 +62,14 @@ function addColorHoliday () {
     feriados = true;
   }
 }
+
+// 4 - Acrescentar o botão com o nome "Sexta-feira" através de uma function
+function addButtonFriday (string) {
+  let divParent = document.querySelector(".buttons-container")
+  let buttonHoliday = document.createElement("button")
+  buttonHoliday.innerText = string
+  buttonHoliday.id = "btn-friday"
+
+  divParent.appendChild(buttonHoliday)
+}
+addButtonFriday("Sexta-feira");
