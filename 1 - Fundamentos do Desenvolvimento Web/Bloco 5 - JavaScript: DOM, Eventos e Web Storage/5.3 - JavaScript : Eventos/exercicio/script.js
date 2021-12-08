@@ -13,8 +13,8 @@ function createDaysOfTheWeek() {
   
   createDaysOfTheWeek();
   
-  // Escreva seu código abaixo.
-  // 1 - Acrescentar os dias ao calendário
+// Escreva seu código abaixo.
+// 1 - Acrescentar os dias ao calendário
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
   let ulListDays = document.querySelector("#days")
@@ -32,3 +32,15 @@ function createDaysOfTheWeek() {
     }
     ulListDays.appendChild(dayItemList)
   }
+// 2 - Acrescentar o botão com o nome "Feriados" através de uma function
+function addButton (string) {
+  let divParent = document.querySelector(".buttons-container")
+  let buttonHoliday = document.createElement("button")
+  buttonHoliday.innerText = string
+  buttonHoliday.id = "btn-holiday"
+
+  divParent.appendChild(buttonHoliday)
+}
+addButton("Feriados");
+
+console.log(document.querySelector(".buttons-container"))
