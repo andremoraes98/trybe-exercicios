@@ -137,3 +137,7 @@ function creatBackgroundTask (color) {
   
   taskList.appendChild(taskListStyle)
 }
+
+// 9 - 
+let divTasksCriadas = document.querySelector()
+addEventListener("click")
