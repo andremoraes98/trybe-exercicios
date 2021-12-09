@@ -34,3 +34,14 @@ function changeTextSize () {
         tagP[index].style.fontSize = input.value + "px"
     }
 }
+
+// 4 - 
+buttonSpace.addEventListener("click", changeLineHeight)
+
+function changeLineHeight () {
+    let input = document.querySelector("#heightInput")
+    let tagP = document.querySelectorAll('p')
+    for (let index = 0; index < tagP.length; index += 1 ) {
+        tagP[index].style.lineHeight = input.value + "px"
+    }
+}
