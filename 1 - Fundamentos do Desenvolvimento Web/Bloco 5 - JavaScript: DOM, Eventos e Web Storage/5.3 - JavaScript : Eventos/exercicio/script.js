@@ -129,6 +129,8 @@ function creatTask (task) {
 }
 
 // 8 - Criar legenda para as tasks
+btnAddTask.addEventListener("click", creatBackgroundTask)
+
 function creatBackgroundTask (color) {
   let taskList = document.querySelector(".my-tasks"), taskListStyle = document.createElement("div")
 
@@ -139,5 +141,29 @@ function creatBackgroundTask (color) {
 }
 
 // 9 - 
-let divTasksCriadas = document.querySelector()
-addEventListener("click")
+let divMyTasks = document.querySelector(".my-tasks"), classeTaskSelected = false
+
+divMyTasks.addEventListener("mouseenter", selectColorTask)
+
+function selectColorTask () {
+  let divTasksCriadas = document.querySelectorAll(".my-tasks div")
+
+  console.log(divTasksCriadas)
+
+  for (let index = 0; index < divTasksCriadas.length; index += 1) {
+    divTasksCriadas[index].addEventListener("click", addRemoveClassTaskSelected)
+  }
+  
+  
+  function addRemoveClassTaskSelected (event) {
+    if (classeTaskSelected) {
+      event.target.className = "task"
+      classeTaskSelected = false
+      console.log(event.target.className)
+    } else {
+      event.target.setAttribute("class", "task select")
+      classeTaskSelected = true
+      console.log(event.target.className)
+    }
+  }
+}
