@@ -140,8 +140,6 @@ function creatBackgroundTask (color) {
   taskList.appendChild(taskListStyle)
 }
 
-creatBackgroundTask("red")
-
 // 9 - adicionar a classe task select quando uma legenda for clicada
 
 function selectColorTask () {
