@@ -140,30 +140,33 @@ function creatBackgroundTask (color) {
   taskList.appendChild(taskListStyle)
 }
 
-// 9 - 
-let divMyTasks = document.querySelector(".my-tasks"), classeTaskSelected = false
+creatBackgroundTask("red")
 
-divMyTasks.addEventListener("mouseenter", selectColorTask)
+// 9 - adicionar a classe task select quando uma legenda for clicada
 
 function selectColorTask () {
-  let divTasksCriadas = document.querySelectorAll(".my-tasks div")
+  let divTasksCriadas = document.querySelector(".my-tasks div")
 
-  console.log(divTasksCriadas)
-
-  for (let index = 0; index < divTasksCriadas.length; index += 1) {
-    divTasksCriadas[index].addEventListener("click", addRemoveClassTaskSelected)
-  }
-  
+  divTasksCriadas.addEventListener("click", addRemoveClassTaskSelected)  
   
   function addRemoveClassTaskSelected (event) {
-    if (classeTaskSelected) {
-      event.target.className = "task"
-      classeTaskSelected = false
-      console.log(event.target.className)
-    } else {
+    if (event.target.className === "task") {
       event.target.setAttribute("class", "task select")
-      classeTaskSelected = true
-      console.log(event.target.className)
+    } else if (event.target.className !== "task") {
+      event.target.className = "task"
     }
+  }
+}
+
+// 10 - atribuir a cor da legenda à cor do dia que for clicado no calendario
+for (let index = 0; index < days.length; index += 1 ) {
+  days[index].addEventListener("click", addRemoveLegendColor)
+}
+
+function addRemoveLegendColor (event) {
+  if (event.target.style.color === "") {
+    event.target.style.color = document.querySelector(".task").style.backgroundColor
+  } else if (event.target.style.color !== "") {
+    event.target.style.color = ""
   }
 }
