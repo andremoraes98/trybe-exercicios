@@ -35,7 +35,7 @@ function changeTextSize () {
     }
 }
 
-// 4 - 
+// 4 - altera o espaçamento do texto
 buttonSpace.addEventListener("click", changeLineHeight)
 
 function changeLineHeight () {
@@ -43,5 +43,16 @@ function changeLineHeight () {
     let tagP = document.querySelectorAll('p')
     for (let index = 0; index < tagP.length; index += 1 ) {
         tagP[index].style.lineHeight = input.value + "px"
+    }
+}
+
+// 5 - altera o tipo de fonte
+buttonFontType.addEventListener("click", changeFontStyle)
+
+function changeFontStyle () {
+    let input = document.querySelector("#fontType")
+    let tagP = document.querySelectorAll('p')
+    for (let index = 0; index < tagP.length; index += 1 ) {
+        tagP[index].style.fontFamily = input.value
     }
 }
