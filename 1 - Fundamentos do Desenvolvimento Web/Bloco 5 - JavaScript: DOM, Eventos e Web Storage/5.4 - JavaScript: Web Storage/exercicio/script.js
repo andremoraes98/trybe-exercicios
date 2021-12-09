@@ -4,6 +4,18 @@ let buttonTextSize = document.querySelector("#text-size")
 let buttonSpace = document.querySelector("#space")
 let buttonFontType = document.querySelector("#font-type")
 let body = document.querySelector('body')
+let buttonReset = document.querySelector("#reset")
+let tagP = document.querySelectorAll('p')
+
+// window.onload {
+//     localStorage.setItem("backgroundColor"; "white")
+//     localStorage.setItem("textColor"; "black")
+//     localStorage.setItem("fontSize"; body.style.backgroundColor)
+//     localStorage.setItem("backgroundColor"; body.style.backgroundColor)
+//     localStorage.setItem("backgroundColor"; body.style.backgroundColor)
+// }
+
+console.log(body.style.backgroundColor)
 
 // 1 - alterar a cor do background
 buttonBackground.addEventListener("click", changeBackgroundColor)
@@ -18,7 +30,6 @@ buttonColor.addEventListener("click", changeTextColor)
 
 function changeTextColor () {
     let input = document.querySelector("#colorInput")
-    let tagP = document.querySelectorAll('p')
     for (let index = 0; index < tagP.length; index += 1 ) {
         tagP[index].style.color = input.value
     }
@@ -29,7 +40,6 @@ buttonTextSize.addEventListener("click", changeTextSize)
 
 function changeTextSize () {
     let input = document.querySelector("#sizeInput")
-    let tagP = document.querySelectorAll('p')
     for (let index = 0; index < tagP.length; index += 1 ) {
         tagP[index].style.fontSize = input.value + "px"
     }
@@ -40,7 +50,6 @@ buttonSpace.addEventListener("click", changeLineHeight)
 
 function changeLineHeight () {
     let input = document.querySelector("#heightInput")
-    let tagP = document.querySelectorAll('p')
     for (let index = 0; index < tagP.length; index += 1 ) {
         tagP[index].style.lineHeight = input.value + "px"
     }
@@ -51,8 +60,17 @@ buttonFontType.addEventListener("click", changeFontStyle)
 
 function changeFontStyle () {
     let input = document.querySelector("#fontType")
-    let tagP = document.querySelectorAll('p')
     for (let index = 0; index < tagP.length; index += 1 ) {
         tagP[index].style.fontFamily = input.value
+    }
+}
+
+//6 - redefine todas as caracteristicas
+buttonReset.addEventListener("click", reset)
+
+function reset() {
+    body.removeAttribute("style")
+    for (let index = 0; index < tagP.length; index += 1 ) {
+        tagP[index].removeAttribute("style")
     }
 }
