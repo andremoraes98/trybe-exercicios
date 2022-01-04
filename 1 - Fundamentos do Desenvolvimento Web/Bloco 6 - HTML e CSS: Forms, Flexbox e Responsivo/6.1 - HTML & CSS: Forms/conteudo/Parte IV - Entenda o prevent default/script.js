@@ -8,3 +8,9 @@ HREF_LINK.addEventListener('click', nothingHappensLink);
 function nothingHappensLink() {
   event.preventDefault();
 }
+
+INPUT_CHECKBOX.addEventListener('click', nothingHappensCheckbox);
+
+function nothingHappensCheckbox() {
+  event.preventDefault();
+}
