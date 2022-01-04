@@ -14,3 +14,11 @@ INPUT_CHECKBOX.addEventListener('click', nothingHappensCheckbox);
 function nothingHappensCheckbox() {
   event.preventDefault();
 }
+
+INPUT_TEXT.addEventListener('keypress', onlyAPermited);
+
+function onlyAPermited() {
+  if (event.key !== 'a') {
+    event.preventDefault();
+  }
+}
