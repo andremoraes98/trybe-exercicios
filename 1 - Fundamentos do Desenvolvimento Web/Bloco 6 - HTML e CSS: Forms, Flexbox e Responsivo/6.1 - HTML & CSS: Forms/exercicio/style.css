@@ -1,0 +1,22 @@
+fieldset {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  padding: 20px 30px;
+  background-color: rgb(247, 239, 239);
+  border: solid rgb(175, 175, 175) 2px;
+}
+
+body {
+  text-align: center;
+  background-color: rgb(240, 230, 230);
+}
+
+textarea {
+  resize: none;
+}
+
+label {
+  line-height: 30px;
+}
