@@ -1,4 +1,4 @@
-fieldset {
+fieldset, .dados {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -11,12 +11,18 @@ fieldset {
 body {
   text-align: center;
   background-color: rgb(240, 230, 230);
+  font-family: sans-serif;
 }
 
 textarea {
   resize: none;
 }
 
-label {
+label, .dados {
   line-height: 30px;
+}
+
+.dados {
+  margin-top: 15px;
+  background-color: rgb(194, 191, 191);
 }

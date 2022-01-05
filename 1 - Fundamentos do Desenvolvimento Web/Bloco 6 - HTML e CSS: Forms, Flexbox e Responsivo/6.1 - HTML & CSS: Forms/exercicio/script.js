@@ -20,24 +20,25 @@ function validDados() {
   for (let index = 0; index < input.length; index += 1) {
     if (input[index].value !== '') {
       dadosValidos += 1;
-    } else {
-      dadosInvalidos += input[index].id + ' ';
     }
     console.log(dadosValidos, input.length);
     if (input.length === dadosValidos) {
       validDate();
     } else {
-      
+      alert('Preencha os campos em branco!')
     }
   }
 }
 
 function validDate() {
-  const dataDiv = document.querySelector('#dados');
+  const body = document.querySelector('body');
+  const dataDiv = document.createElement('div');
   const dataInicial = document.querySelector('#Data').value;
   let dia = '';
   let mes = '';
   let ano = '';
+
+  
 
   for (let index = 0; index < dataInicial.length; index += 1) {
     if (dataInicial[index] !== '/') {
@@ -58,6 +59,8 @@ function validDate() {
   } else if (parseInt(ano) < 0) {
     alert('Ano inválido');
   } else {
+    dataDiv.classList.add('dados');
+    body.appendChild(dataDiv);
     for (let index = 0; index < input.length; index += 1) {
       const newDiv = document.createElement('div');
       if (index === 5) {
@@ -75,6 +78,9 @@ function validDate() {
 resetButton.addEventListener('click', clearDiv);
 
 function clearDiv() {
-  const data = document.querySelector('#dados');
-  data.innerHTML = ''
+  const data = document.querySelectorAll('.dados');
+  
+  for (let index = 0; index < data.length; index += 1) {
+    data[index].remove();
+  }
 }
