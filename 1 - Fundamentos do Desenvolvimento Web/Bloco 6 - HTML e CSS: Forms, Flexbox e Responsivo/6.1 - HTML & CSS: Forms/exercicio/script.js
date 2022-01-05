@@ -60,8 +60,14 @@ function validDate() {
   } else {
     for (let index = 0; index < input.length; index += 1) {
       const newDiv = document.createElement('div');
-      newDiv.innerHTML = input[index].id + ': ' + input[index].value;
-      dataDiv.appendChild(newDiv);
+      if (index === 5) {
+        newDiv.innerHTML = 'Tipo de moradia: ' + document.querySelector('input[name="tipo-de-moradia"]:checked').value;
+        dataDiv.appendChild(newDiv);
+        index += 1
+      } else {
+        newDiv.innerHTML = input[index].id + ': ' + input[index].value;
+        dataDiv.appendChild(newDiv);
+      }
     }
   }
 }
