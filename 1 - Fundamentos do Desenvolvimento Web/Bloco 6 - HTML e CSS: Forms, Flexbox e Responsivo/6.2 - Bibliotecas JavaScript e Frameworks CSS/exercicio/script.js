@@ -3,7 +3,12 @@ const validation = new JustValidate('#form');
 const statesList = document.querySelector('#Estado');
 const statesBR = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins', 'Distrito Federal'];
 const modal = new bootstrap.Modal(document.querySelector('#modal'));
-const sendButton = document.querySelector('#send') 
+const sendButton = document.querySelector('#send');
+const contentModal = document.querySelector('#modal-content');
+const input = document.querySelectorAll('input');
+const resetButton = document.querySelector('#reset');
+const confirmButton = document.querySelector('#confirm');
+const cancelButton = document.querySelector('#cancel');
 
 // Adição dos estados no select
 for (let index = 0; index < statesBR.length; index += 1) {
@@ -114,5 +119,25 @@ validation
     },
   ])
   .onSuccess(() => {
+    for (let index = 0; index < input.length; index += 1) {
+      const newDiv = document.createElement('div');
+      if (index === 5) {
+        newDiv.innerHTML = 'Tipo de moradia: ' + document.querySelector('input[name="tipo-de-moradia"]:checked').value;
+        contentModal.appendChild(newDiv);
+        index += 1
+      } else {
+        newDiv.innerHTML = input[index].id + ': ' + input[index].value;
+        contentModal.appendChild(newDiv);
+      }
+    }
+
     modal.show();
-  });
+})
+
+resetButton.addEventListener('click', clearModal);
+confirmButton.addEventListener('click', clearModal);
+cancelButton.addEventListener('click', clearModal);
+
+function clearModal() {
+  contentModal.innerHTML=''
+}
