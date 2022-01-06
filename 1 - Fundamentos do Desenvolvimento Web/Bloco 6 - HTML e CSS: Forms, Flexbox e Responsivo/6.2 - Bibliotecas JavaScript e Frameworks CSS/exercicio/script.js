@@ -1,4 +1,13 @@
 const date = document.querySelector('#Data');
+const statesList = document.querySelector('#Estado');
+const statesBR = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins', 'Distrito Federal'];
+
+for (let index = 0; index < statesBR.length; index += 1) {
+  const options = document.createElement('option');
+  options.innerHTML = statesBR[index];
+  options.value = statesBR[index];
+  statesList.appendChild(options);
+}
 
 date.DatePickerX.init({
   format: 'dd/mm/yyyy'
@@ -69,3 +78,4 @@ validation
       errorMessage: 'Estado é obrigatório.',
     },
   ])
+  .addRequiredGroup('#tipo-de-moradia-radio-group')
