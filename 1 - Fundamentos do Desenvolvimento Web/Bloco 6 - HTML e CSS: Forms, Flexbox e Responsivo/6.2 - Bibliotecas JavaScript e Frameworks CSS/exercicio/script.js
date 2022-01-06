@@ -63,3 +63,9 @@ validation
       errorMessage: 'Estado é obrigatório.',
     },
   ])
+  .addField('#Estado', [
+    {
+      rule: 'required',
+      errorMessage: 'Estado é obrigatório.',
+    },
+  ])
