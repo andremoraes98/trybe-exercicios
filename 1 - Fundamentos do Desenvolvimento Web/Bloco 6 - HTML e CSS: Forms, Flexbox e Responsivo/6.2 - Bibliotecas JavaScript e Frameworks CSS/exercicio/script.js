@@ -1,4 +1,5 @@
 const date = document.querySelector('#Data');
+const validation = new JustValidate('#form');
 const statesList = document.querySelector('#Estado');
 const statesBR = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins', 'Distrito Federal'];
 
@@ -12,8 +13,6 @@ for (let index = 0; index < statesBR.length; index += 1) {
 date.DatePickerX.init({
   format: 'dd/mm/yyyy'
 });
-
-const validation = new JustValidate('#form');
 
 validation
   .addField('#Nome', [
@@ -72,10 +71,40 @@ validation
       errorMessage: 'Estado é obrigatório.',
     },
   ])
-  .addField('#Estado', [
+  .addRequiredGroup('#tipo-de-moradia-radio-group')
+  .addField('#Resumo', [
     {
       rule: 'required',
-      errorMessage: 'Estado é obrigatório.',
+      errorMessage: 'Resumo do currículo é obrigatório.',
+    },
+    {
+      rule: 'maxLength',
+      value: 1000,
     },
   ])
-  .addRequiredGroup('#tipo-de-moradia-radio-group')
+  .addField('#Cargo', [
+    {
+      rule: 'required',
+      errorMessage: 'Cargo é obrigatório.',
+    },
+    {
+      rule: 'maxLength',
+      value: 40,
+    },
+  ])
+  .addField('#Descricao', [
+    {
+      rule: 'required',
+      errorMessage: 'Descrição do cargo é obrigatório.',
+    },
+    {
+      rule: 'maxLength',
+      value: 500,
+    },
+  ])
+  .addField('#Data', [
+    {
+      rule: 'required',
+      errorMessage: 'Data é obrigatório.',
+    },
+  ])
