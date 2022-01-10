@@ -37,15 +37,49 @@ h1, h2, footer {
 }
 
 @media screen and (max-width: 400px) {
-    .aside-one, .aside-two, article, footer {
+  article, footer, .aside-one, .aside-two  {
+    padding: 10px 5px;
+  }
+
+  main {
+    flex-wrap: wrap;
+  }
+
+  footer, .aside-one, .aside-two, article {
+    flex-basis: 100%;
+  }
+
+  li, p {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+/* @media screen and (min-width: 401px) and (max-width: 767px) {
+  .aside-one, .aside-two, article, footer {
       flex-basis: 100%;
       padding: 10px 20px;
   }
-}
+} */
 
 @media screen and (min-width: 768px) {
   article, footer, .aside-one, .aside-two  {
     padding: 20px 10px;
+  }
+
+  main {
+    flex-wrap: nowrap;
   }
 
   article {
