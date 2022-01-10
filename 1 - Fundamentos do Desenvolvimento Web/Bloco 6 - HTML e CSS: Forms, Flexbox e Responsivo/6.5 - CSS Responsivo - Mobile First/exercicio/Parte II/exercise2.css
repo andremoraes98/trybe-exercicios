@@ -18,7 +18,6 @@ header ul {
 main {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .aside-one {
@@ -37,9 +36,48 @@ h1, h2, footer {
   text-align: center;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
     .aside-one, .aside-two, article, footer {
       flex-basis: 100%;
       padding: 10px 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  article, footer, .aside-one, .aside-two  {
+    padding: 20px 10px;
+  }
+
+  article {
+    flex-basis: 60%;
+  }
+  
+  .aside-one, .aside-two {
+    flex-basis: 20%;
+  }
+
+  .aside-two {
+    order: 1;
+  }
+
+  footer {
+    flex-basis: 100%;
+    order: 2;
+  }
+
+  li, p {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 30px;
   }
 }
