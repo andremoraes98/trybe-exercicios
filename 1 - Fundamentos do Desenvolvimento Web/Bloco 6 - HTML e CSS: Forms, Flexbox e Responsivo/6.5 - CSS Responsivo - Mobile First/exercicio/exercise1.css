@@ -10,20 +10,11 @@
   box-sizing: inherit;
 }
 
-body {
-
-}
-
 img {
   max-width: 100%;
-  margin: 30px;
 }
 
 main {
-
-}
-
-section {
 
 }
 
@@ -46,5 +37,33 @@ figcaption {
 
   h2 {
     font-size: 50px;
+  }
+
+  img {
+    margin: 30px;
+  }
+
+  body {
+    margin: 30px 40px;
+    background-color: coral;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    flex-basis: 40%;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  figcaption {
+    font-size: 20px;
   }
 }
