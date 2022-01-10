@@ -14,18 +14,6 @@ body {
 
 }
 
-article {
-
-}
-
-h1 {
-
-}
-
-h2 {
-
-}
-
 img {
     max-width: 100%;
 }
@@ -44,4 +32,18 @@ figure {
 
 figcaption {
   font-size: .8em;
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  article {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
 }
