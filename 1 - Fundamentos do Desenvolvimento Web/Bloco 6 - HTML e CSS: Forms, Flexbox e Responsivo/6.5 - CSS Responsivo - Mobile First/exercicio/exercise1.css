@@ -26,7 +26,7 @@ figcaption {
   font-size: .8em;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) and (max-width:800px) {
   h1 {
     font-size: 60px;
   }
@@ -65,5 +65,47 @@ figcaption {
 
   figcaption {
     font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  article {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 60px;
+  }
+
+  img {
+    margin: 50px;
+  }
+
+  body {
+    margin: 30px 40px;
+    background-color: cornflowerblue;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    flex-basis: 40%;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  figcaption {
+    font-size: 30px;
   }
 }
