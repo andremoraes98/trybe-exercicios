@@ -84,3 +84,9 @@ p strong {
 .card:nth-of-type(2) {
   background-color: #0255c2;
 }
+
+@media screen and (max-width: 500px) {
+  .trick {
+    color: red !important;
+  }
+}
