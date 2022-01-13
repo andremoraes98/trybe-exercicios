@@ -5,6 +5,8 @@ function sum() {
 
   if (!value1 || !value2) {
     throw new Error ('Insira dois valores'); 
+  } else if (isNaN(value1) || isNaN(value2)) {
+    throw new Error ('Insira um valor válido');
   } else {
     document.getElementById('result').innerHTML = `Resultado: ${result}`;
   }
@@ -17,6 +19,8 @@ function soma() {
     sum();
   } catch(error) {
     document.getElementById('result').innerHTML = error.message;
+    document.getElementById('value1').value = '';
+    document.getElementById('value2').value = '';
   }
 }
 
