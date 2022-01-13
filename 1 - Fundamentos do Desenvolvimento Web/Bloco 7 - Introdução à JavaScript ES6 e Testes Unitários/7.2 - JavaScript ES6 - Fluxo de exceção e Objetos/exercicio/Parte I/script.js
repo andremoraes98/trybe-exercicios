@@ -19,6 +19,7 @@ function soma() {
     sum();
   } catch(error) {
     document.getElementById('result').innerHTML = error.message;
+  } finally {
     document.getElementById('value1').value = '';
     document.getElementById('value2').value = '';
   }
