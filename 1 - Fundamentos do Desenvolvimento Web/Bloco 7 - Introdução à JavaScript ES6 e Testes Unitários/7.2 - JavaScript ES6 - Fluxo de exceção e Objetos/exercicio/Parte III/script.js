@@ -22,4 +22,6 @@ const modifyLesson = (object, key, value) => {
   object[key] = value;
 }
 
+const listObjectKeys = (object) => Object.keys(object);
+
 modifyLesson(lesson2, 'turno', 'noite')
