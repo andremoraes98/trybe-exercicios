@@ -17,3 +17,9 @@ const lesson3 = {
   professor: 'Maria Clara',
   turno: 'noite',
 };
+
+const modifyLesson = (object, key, value) => {
+  object[key] = value;
+}
+
+modifyLesson(lesson2, 'turno', 'noite')
