@@ -81,3 +81,9 @@ const objectAuthor = books.map( (book) =>{
     return 0
   }
 });
+
+
+// 3 - Crie um array com todos os objetos que possuem gênero ficção científica ou fantasia.
+const booksOfCienceFictionOrFantasy = books.filter( (book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia');
+
+console.log(booksOfCienceFictionOrFantasy);
