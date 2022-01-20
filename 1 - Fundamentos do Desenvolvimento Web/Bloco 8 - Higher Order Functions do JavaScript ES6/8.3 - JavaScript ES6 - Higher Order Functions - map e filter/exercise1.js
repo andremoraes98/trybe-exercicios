@@ -114,15 +114,7 @@ const booksOfCienceFictionOrFantasy = books.filter( (book) => book.genre === 'Fi
 
 const oldBooksOrdered =  books.filter( (book) => {
   return 2022 - book.releaseYear >= 60
-}).sort( (a, b) => {
-  if (a.releaseYear > b.releaseYear) {
-    return 1
-  } else if (a.releaseYear < b.releaseYear) {
-    return -1
-  } else { 
-    return 0
-  }
-});
+}).sort( (a, b) => a.releaseYear - b.releaseYear);
 
 
 // 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
@@ -143,3 +135,8 @@ const fantasyOrScienceFictionAuthors = books.map( (book) => book.author.name).so
 ]; */
 
 const oldBooks = books.filter( (book) => 2022 - book.releaseYear >= 60).map( (book) => book.name);
+
+// 7 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
+// const expectedResult = 'O Senhor dos Anéis';
+
+const authorWith3DotsOnName = books;
