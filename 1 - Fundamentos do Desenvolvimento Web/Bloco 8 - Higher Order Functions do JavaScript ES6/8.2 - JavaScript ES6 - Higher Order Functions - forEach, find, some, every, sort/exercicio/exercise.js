@@ -191,5 +191,3 @@ function authorUnique() {
     return flag;
   });
 }
-
-console.log(authorUnique());
