@@ -134,3 +134,12 @@ const oldBooksOrdered =  books.filter( (book) => {
 ]; */
 
 const fantasyOrScienceFictionAuthors = books.map( (book) => book.author.name).sort();
+
+// 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+/* const expectedResult = [
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu',
+]; */
+
+const oldBooks = books.filter( (book) => 2022 - book.releaseYear >= 60).map( (book) => book.name);
