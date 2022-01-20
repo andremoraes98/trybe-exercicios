@@ -181,5 +181,15 @@ function someBookWasReleaseOnThe80s() {
 
 function authorUnique() {
   // escreva seu código aqui
-  return books.some((book, index, list) => book.author.birthYear === list.forEach((item) => item.author.birthYear))
+  return books.some((book, item, list) => {
+    let flag = false;
+    for (let index = 0; index < list.length; index += 1) {
+      if (book.author.birthYear === list[index].author.birthYear && index !== item) {
+        flag = true;
+      }
+    }
+    return flag;
+  });
 }
+
+console.log(authorUnique());
