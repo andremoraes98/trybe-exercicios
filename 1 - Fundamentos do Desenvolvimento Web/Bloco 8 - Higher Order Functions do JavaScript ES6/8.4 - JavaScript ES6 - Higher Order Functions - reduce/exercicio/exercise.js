@@ -5,12 +5,7 @@ const arrays = [
   [4, 5, 6],
 ];
 
-function flatten() {
-  // escreva seu código aqui
-  const finalArray = []
-  arrays.map( (array) => array.map( (item) => finalArray.push(item)));
-  return finalArray
-}
+const flatten = arrays.reduce( (accumulator, currentValue) => accumulator.concat(currentValue));
 
 
 const books = [
@@ -89,3 +84,21 @@ const reduceNames = books.reduce( (accumulator, currentValue) => `${accumulator}
 const averageAge = books.reduce( (accumulator, currentValue) => {
   return accumulator += (currentValue.releaseYear - currentValue.author.birthYear)
 }, 0) / books.length;
+
+
+
+// 4 - Encontre o livro com o maior nome.
+/* const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+}; */
+
+function longestNamedBook() {
+  // escreva seu código aqui
+}
