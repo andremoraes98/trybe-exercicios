@@ -99,6 +99,4 @@ const averageAge = books.reduce( (accumulator, currentValue) => {
   releaseYear: 1991,
 }; */
 
-function longestNamedBook() {
-  // escreva seu código aqui
-}
+const longestNamedBook = books.reduce( (accumulator, currentValue) => (currentValue.name.length > accumulator.name.length) ? currentValue : accumulator);
