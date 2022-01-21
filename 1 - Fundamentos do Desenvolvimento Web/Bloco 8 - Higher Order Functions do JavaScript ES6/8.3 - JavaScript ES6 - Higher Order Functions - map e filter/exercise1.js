@@ -139,4 +139,11 @@ const oldBooks = books.filter( (book) => 2022 - book.releaseYear >= 60).map( (bo
 // 7 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
 // const expectedResult = 'O Senhor dos Anéis';
 
-const authorWith3DotsOnName = books;
+const authorWith3DotsOnName = books.map( (book) => {
+  return {
+    authorName: book.author.name.split(' ', 3),
+    bookName: book.name
+  }
+})
+
+const bookWhoAuthorHas3InitialOnName = authorWith3DotsOnName.filter( (item) => item.authorName[0].length === 2 && item.authorName[1].length === 2 && item.authorName[2].length === 2).map( (book) => book.bookName);
