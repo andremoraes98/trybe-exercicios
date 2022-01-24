@@ -1,9 +1,6 @@
 // Do jeito que está, quando passamos person para a função GetNationality o retorno é João is undefined . Ajuste a função GetNationality para que a chamada GetNationality(person) retorne João is Brazilian .
-const getNationality = ({ firstName, nationality }) => {
-  if (!nationality) {
-    ({nationality = 'Brazilian'} = person)
-    return `${firstName} is ${nationality}` 
-  }
+const getNationality = (someone) => {
+  const {firstName, nationality = 'Brazilian'} = someone
   return `${firstName} is ${nationality}` 
 };
 
