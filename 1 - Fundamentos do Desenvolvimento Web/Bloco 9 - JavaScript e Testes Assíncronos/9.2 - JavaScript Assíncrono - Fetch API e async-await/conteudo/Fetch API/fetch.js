@@ -7,7 +7,7 @@ const fetchJoke = () => {
   console.log(fetch(url));
 } */
 
-const fetchJoke = () => {
+const fetchJoke = async () => {
   const url = 'https://api.chucknorris.io/jokes/random?category=dev';
 
   /* Se algo der errado, o código quebrará.
@@ -15,11 +15,18 @@ const fetchJoke = () => {
     .then((response) => response.json())
     .then((data) => console.log(data.value)); */
 
-  // Com a adição do .cacth, caso haja algum erro, ele será tratado.
+  /* Com a adição do .cacth, caso haja algum erro, ele será tratado.
   fetch(url)
     .then((response) => response.json())
     .then((data) => console.log(data.value))
-    .catch((error) => console.log(`Algo deu errado :( \n${error}`));
+    .catch((error) => console.log(`Algo deu errado :( \n${error}`)); */
+
+    const result = await fetch(url)
+    .then((response) => response.json())
+    .then((data) => data.value)
+    .catch((error) => `Algo deu errado :( \n${error}`);
+  
+  console.log(result);
 }
 
 fetchJoke();
