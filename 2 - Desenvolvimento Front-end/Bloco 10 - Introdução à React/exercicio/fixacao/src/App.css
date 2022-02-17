@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  background-color: #282c34;
+  color: #FFF;
+}
+
+div {
+  background-color: #504191;
+}
