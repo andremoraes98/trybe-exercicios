@@ -1,25 +1,38 @@
 import './App.css';
+import React from 'react';
 
-const handleClickLeft = () => {
-  console.log('Clicou na esquerda!');
-}
+class App extends React.Component {
+  constructor() {
+    super();
+    this.handleClickLeft = this.handleClickLeft.bind(this);
+    this.handleClickMid = this.handleClickMid.bind(this);
+    this.handleClickRigth = this.handleClickRigth.bind(this);
+  }
 
-const handleClickMid = () => {
-  console.log('Clicou no meio!');
-}
+  handleClickLeft() {
+    console.log('Clicou na esquerda!');
+    console.log(this);
+  }
+  
+  handleClickMid() {
+    console.log('Clicou no meio!');
+    console.log(this);
+  }
+  
+  handleClickRigth() {
+    console.log('Clicou na direita!');
+    console.log(this);
+  }
 
-const handleClickRigth = () => {
-  console.log('Clicou na direita!');
-}
-
-function App() {
-  return (
-    <div className="App">
-      <button onClick={ handleClickLeft }>Esquerda</button>
-      <button onClick={ handleClickMid }>Meio</button>
-      <button onClick={ handleClickRigth }>Direita</button>
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <button onClick={ this.handleClickLeft }>Esquerda</button>
+        <button onClick={ this.handleClickMid }>Meio</button>
+        <button onClick={ this.handleClickRigth }>Direita</button>
+      </div>
+    );
+  }
 }
 
 export default App;
