@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: darkgrey;
+}
+
+.pokemon-info, .pokemon-dragonair {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 40%;
+  justify-content: space-around;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: rgb(189, 189, 189);
+  align-items: center;
+}
+
+.pokemon-dragonair {
+  width: 90%;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px 0;
+  color: #FFF;
+}
