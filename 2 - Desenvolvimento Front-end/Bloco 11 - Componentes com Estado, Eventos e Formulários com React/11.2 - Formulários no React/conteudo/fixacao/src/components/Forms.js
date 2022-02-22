@@ -8,23 +8,17 @@ class Forms extends React.Component {
       estados: '',
       nome: '',
       obs: '',
+      vaiComparecer: false,
     }
 
-    this.changeState = this.changeState.bind(this)
-    this.changeName = this.changeName.bind(this)
-    this.changeObs = this.changeObs.bind(this)
+    this.changeValue = this.changeValue.bind(this)
   }
 
-  changeState(event) {
-    this.setState({ estados: event.target.value });
-  }
-
-  changeName(event) {
-    this.setState({ nome: event.target.value });
-  }
-
-  changeObs(event) {
-    this.setState({ obs: event.target.value });
+  changeValue({ target }) {
+    console.log(target.name)
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    this.setState({ [name]: value });
   }
 
   render() {
@@ -32,12 +26,12 @@ class Forms extends React.Component {
       <div>
         <label>
           Observação:
-          <textarea value={this.state.obs} onChange={this.changeObs} name="obs"/>
+          <textarea value={this.state.obs} onChange={this.changeValue} name="obs"/>
         </label>
 
         <label>
           Estado:
-          <select value={this.state.estados} onChange={this.changeState}>
+          <select name='estados' value={this.state.estados} onChange={this.changeValue}>
             <option value=""></option>
             <option value="bahia">Bahia</option>
             <option value="ceara">Ceará</option>
@@ -47,8 +41,14 @@ class Forms extends React.Component {
 
         <label>
           Nome:
-          <input value={this.state.nome} onChange={this.changeName} type='text' />
+          <input name='nome' value={this.state.nome} onChange={this.changeValue} type='text' />
         </label>
+
+        <label>
+          Comparecerá?
+          <input name="vaiComparecer" type="checkbox" value={this.state.vaiComparecer} onChange={this.changeValue}/>
+        </label>
+
         <input type='submit' />
       </div>
     )
