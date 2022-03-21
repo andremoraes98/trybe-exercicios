@@ -1,3 +1,5 @@
+const randomNumber = require('./services');
+
 describe('Testa a função generateRandomNumber', () => {
   it('Verifica se a função generateRandomNumber foi chamada.', () => {
     generateRandomNumber = jest.fn();
@@ -40,8 +42,6 @@ describe('Testa a implementação mockada da generateRandomNumber', () => {
   });
 
   it('Verifique se a aplicação da nova implementação acontece apenas uma vez.', () => {
-    const randomNumber = require('./services');
-
     const mockGenerateRandomNumber = jest.spyOn(randomNumber, 'generateRandomNumber').mockImplementation((a, b) => a / b);
 
     randomNumber.generateRandomNumber(8, 4);
