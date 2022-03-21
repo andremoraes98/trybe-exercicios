@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import App from './App';
-import renderWithRouter from './helpers/renderWithRouter';
+import App from '../App';
+import renderWithRouter from '../helpers/renderWithRouter';
 import userEvent from '@testing-library/user-event';
 
 describe('Verifica se o clique em cada rota renderiza os textos esperados na tela.', () => {

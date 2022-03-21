@@ -10,10 +10,10 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route path={'/about'} component={ About } />
-        <Route path={'/projects'} component={ Projects } />
-        <Route path={'/contact'} component={ Contact } />
-        <Route path={'/'} component={ Home } />
+        <Route path='/about' component={ About } />
+        <Route path='/projects' component={ Projects } />
+        <Route path='/contact' component={ Contact } />
+        <Route path='/' component={ Home } />
       </Switch>
     );
   }
