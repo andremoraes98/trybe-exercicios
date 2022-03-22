@@ -28,11 +28,15 @@ h1, h2 {
   text-align: center;
 }
 
+h1 {
+  padding-top: 98px;
+}
+
 .about {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 60px 50px 0;
+  padding: 0 50px;
 }
 
 .about img {
@@ -40,7 +44,16 @@ h1, h2 {
 }
 
 .textAbout {
+  text-align: justify;
   padding: 0 10%;
+}
+
+.textAbout h2 {
+  padding-bottom: 15px;
+}
+
+.textAbout p {
+  padding: 15px 0;
 }
 
 .textAbout ul {
