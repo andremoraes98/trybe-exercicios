@@ -3,13 +3,13 @@ const ESTADO_INICIAL = {
   index: 0,
 };
 
-const nextColor = () => ({
+const nextColor = {
   type: "NEXT_COLOR",
-})
+}
 
-const previousColor = () => ({
+const previousColor = {
   type: "PREVIOUS_COLOR",
-})
+}
 
 const nextButton = document.querySelector('#next');
 const previousButton = document.querySelector('#previous');
@@ -33,6 +33,21 @@ const reducer = (state = ESTADO_INICIAL, action) => {
 
 const store = Redux.createStore(reducer);
 
-nextButton.addEventListener('click', store.dispatch(nextColor));
-previousButton.addEventListener('click', previousColor);
-console.log(store.getState());
+const actionNext = () => {
+  store.dispatch(nextColor)
+}
+
+const actionPrevious = () => {
+  store.dispatch(previousColor)
+}
+
+nextButton.addEventListener('click', actionNext);
+previousButton.addEventListener('click', actionPrevious);
+
+store.subscribe( () => {
+  const { colors, index} = store.getState();
+  const colorName = document.querySelector('#value');
+  const bodyContainer = document.querySelector('#container');
+  colorName.innerHTML = colors[index];
+  bodyContainer.style = `background-color: ${colors[index]}`
+})
