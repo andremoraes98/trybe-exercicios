@@ -11,6 +11,9 @@ const previousColor = () => ({
   type: "PREVIOUS_COLOR",
 })
 
+const nextButton = document.querySelector('#next');
+const previousButton = document.querySelector('#previous');
+
 const reducer = (state = ESTADO_INICIAL, action) => {
   switch (action.type) {
     case "NEXT_COLOR":
@@ -29,4 +32,7 @@ const reducer = (state = ESTADO_INICIAL, action) => {
 }
 
 const store = Redux.createStore(reducer);
+
+nextButton.addEventListener('click', store.dispatch(nextColor));
+previousButton.addEventListener('click', previousColor);
 console.log(store.getState());
