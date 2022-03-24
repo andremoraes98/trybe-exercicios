@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+}
+
+.header, footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+}
+
+.link {
+  padding: 20px 30px;
+  color: white;
+}
+
+footer {
+  bottom: 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  padding-top: 98px;
+}
+
+.about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.about img {
+  width: 30%;
+}
+
+.textAbout {
+  text-align: justify;
+  padding: 0 10%;
+}
+
+.textAbout h2 {
+  padding-bottom: 15px;
+}
+
+.textAbout p {
+  padding: 15px 0;
+}
+
+.textAbout ul {
+  text-align: left;
+  padding: 0 20px;
+}
