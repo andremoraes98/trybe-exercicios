@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 
-const main = (num1, num2, num3) => {
+const mathProblem = (num1, num2, num3) => {
     const promise = new Promise((resolve, reject) => {
         if (
             typeof num1 !== 'number'
@@ -18,6 +18,13 @@ const main = (num1, num2, num3) => {
     return promise;
 }
 
-main(Math.floor(Math.random() * 100 + 1), Math.floor(Math.random() * 100 + 1), Math.floor(Math.random() * 100 + 1))
-    .then((data) => console.log(data))
-    .catch((err) => console.error(err.message));
+const main = async () => {
+    try {
+        const result = await mathProblem(Math.floor(Math.random() * 100 + 1), Math.floor(Math.random() * 100 + 1), Math.floor(Math.random() * 100 + 1));
+        console.log(result);
+    } catch (err) {
+        console.error(err.message)
+    }
+}
+
+main();
