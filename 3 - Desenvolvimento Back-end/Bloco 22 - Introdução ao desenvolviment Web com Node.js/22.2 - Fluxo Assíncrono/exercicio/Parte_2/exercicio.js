@@ -1,24 +1,14 @@
 const simpsonsJson = require('./simpsons.json');
-const readLine = require('readline-sync');
+const fs = require('fs').promises;
 
-const personId = (id) => {
-    const promise = new Promise((resolve, reject) => {
-        if (!simpsonsJson.some(person => person.id == id)) reject(new Error('id não encontrado'));
-
-        resolve(simpsonsJson.filter(person => person.id == id));
-    })
-
-    return promise;
-}
-
-const id = readLine.questionInt('Qual o id do personagem que deseja retornar as informações? ')
+const modifyFamily = simpsonsJson.filter(person => !(person.id === '6' || person.id === '10'));
 
 const main = async () => {
     try {
-        const personInfo = await personId(id);
-        console.log(personInfo);
+        await fs.writeFile('./simpsons.json', JSON.stringify(modifyFamily))
+        console.log('Arquivo escrito!');
     } catch (err) {
-        console.error(err.message);
+        console.log(err.message);
     }
 }
 
