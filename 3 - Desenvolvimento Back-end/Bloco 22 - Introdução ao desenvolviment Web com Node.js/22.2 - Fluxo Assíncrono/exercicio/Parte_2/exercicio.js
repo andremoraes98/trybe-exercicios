@@ -1,18 +1,22 @@
 const simpsonsJson = require('./simpsons.json');
 const fs = require('fs').promises;
 
-const addNelson = async () => {
+const removeNelson = async () => {
     const simpsonFamilyContent = await fs.readFile('./simpsonFamily.json', 'utf8');
     const simpsonFamilyJSON = JSON.parse(simpsonFamilyContent);
 
-    simpsonFamilyJSON.push({id:'8', name:'Nelson Muntz'});
+    const modifiedFamily = simpsonFamilyJSON.filter(({ name }) => name !== 'Nelson Muntz');
 
-    await fs.writeFile('./simpsonFamily.json', JSON.stringify(simpsonFamilyJSON));
+    modifiedFamily.push({id:'5', name:'Maggie Simpson'});
+
+    console.log(modifiedFamily);
+    
+    await fs.writeFile('./simpsonFamily.json', JSON.stringify(modifiedFamily));
 }
 
 const main = () => {
     try {
-        addNelson();
+        removeNelson();
         console.log('Arquivo escrito!')
     } catch (err) {
         console.log(err.message);
