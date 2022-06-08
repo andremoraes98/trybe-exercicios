@@ -17,3 +17,9 @@ describe('Testa se a função', () => {
         expect(result).to.be.equal('neutro');
     });
 });
+
+describe('Testa se a função retorna um erro', () => {
+    it('quando o valor inserido não é um número.', () => {
+        expect(detectNumberSignal).to.throw('Valor não é um número!');
+    });
+});
