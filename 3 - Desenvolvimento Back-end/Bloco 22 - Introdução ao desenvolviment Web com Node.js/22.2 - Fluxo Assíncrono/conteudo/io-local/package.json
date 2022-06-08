@@ -1,0 +1,12 @@
+{
+  "name": "io-local",
+  "version": "1.0.0",
+  "description": "Lendo arquivos com o módulo fs de forma síncrona e assíncrona.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "André Moraes",
+  "license": "ISC"
+}

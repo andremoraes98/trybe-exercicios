@@ -1,0 +1,13 @@
+{
+  "name": "exercicio",
+  "version": "1.0.0",
+  "description": "Exercícios do dia 2 do bloco 22.",
+  "main": "exercicio1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node exercicio.js"
+  },
+  "keywords": [],
+  "author": "André Moraes",
+  "license": "ISC"
+}
