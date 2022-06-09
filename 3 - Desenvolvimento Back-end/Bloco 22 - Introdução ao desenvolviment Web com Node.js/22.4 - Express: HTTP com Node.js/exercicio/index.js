@@ -34,6 +34,17 @@ app.get('/simpsons', (_req, res) => {
     res.status(200).json(simpsons)
 })
 
+app.get('/simpsons/:id', (req, res) => {
+    const { id } = req.params;
+    const simpsons = JSON.parse(fs.readFileSync('./simpsons.js'));
+
+    const person = simpsons.find(simpsom => simpsom.id === id);
+
+    if (!person) return res.status(404).json({ message: 'simpson not found' } );
+
+    res.status(200).json(person);
+});
+
 app.listen('3000', () => {
     console.log('rodando na porta 3000!');
 })
