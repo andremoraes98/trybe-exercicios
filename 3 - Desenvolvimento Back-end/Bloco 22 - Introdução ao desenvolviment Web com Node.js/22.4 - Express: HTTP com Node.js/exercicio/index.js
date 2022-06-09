@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 const app = express();
 app.use(bodyParser.json());
@@ -27,6 +28,11 @@ app.put('/users/:name/:age', (req, res) => {
 
     res.status(200).json({ message: `Seu nome é ${name} e você tem ${age} anos de idade` });
 });
+
+app.get('/simpsons', (_req, res) => {
+    const simpsons = JSON.parse(fs.readFileSync('./simpsons.js'));
+    res.status(200).json(simpsons)
+})
 
 app.listen('3000', () => {
     console.log('rodando na porta 3000!');
