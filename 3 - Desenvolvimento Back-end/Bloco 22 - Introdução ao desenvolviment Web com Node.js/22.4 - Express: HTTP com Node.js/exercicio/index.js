@@ -45,6 +45,22 @@ app.get('/simpsons/:id', (req, res) => {
     res.status(200).json(person);
 });
 
+app.post('/simpsons', (req, res) => {
+    const {id, name} = req.body;
+
+    const simpsons = JSON.parse(fs.readFileSync('./simpsons.js'));
+
+    const simpsom = simpsons.findIndex((person) => Number(person.id) === id);
+
+    if (simpsom !== -1) return res.status(409).json({ message: 'id already exists' });
+
+    simpsons.push({ id, name });
+
+    fs.writeFileSync('./simpsons.js', JSON.stringify(simpsons));
+    
+    res.status(204).end();
+})
+
 app.listen('3000', () => {
     console.log('rodando na porta 3000!');
 })
