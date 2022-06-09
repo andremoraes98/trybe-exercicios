@@ -3,7 +3,7 @@ const req = require('express/lib/request');
 
 const app = express();
 
-const recipe = [
+const recipes = [
     { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
     { id: 2, name: 'Macarrão a Bolonhesa', price: 35.0, waitTime: 25 },
     { id: 3, name: 'Macarrão com molho branco', price: 35.0, waitTime: 25 },
@@ -18,7 +18,7 @@ const drinks = [
 	{ id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
 
-const recipeSorted = [...recipe].sort((a, b) => {
+const recipesSorted = [...recipes].sort((a, b) => {
     if (a.name > b.name) {
       return 1;
     }
@@ -38,20 +38,30 @@ const drinksSorted = [...drinks].sort((a, b) => {
     return 0;
   });
 
-app.get('/recipe', (_res, req) => {
-    req.json(recipe);
+app.get('/recipes', (_req, res) => {
+    res.json(recipes);
 });
 
-app.get('/drinks', (_res, req) => {
-    req.json(drinks);
+app.get('/drinks', (_req, res) => {
+    res.json(drinks);
 });
 
-app.get('/recipe/sorted', (_res, req) => {
-    req.json(recipeSorted);
+app.get('/recipes/sorted', (_req, res) => {
+    res.json(recipesSorted);
 });
 
-app.get('/drinks/sorted', (_res, req) => {
-    req.json(drinksSorted);
+app.get('/drinks/sorted', (_req, res) => {
+    res.json(drinksSorted);
+});
+
+
+app.get('/recipes/:id', (req, res) => {
+    const { id } = req.params;
+    const recipe = recipes.find(recipe => recipe.id === Number(id));
+
+    if (!recipe) return res.status(404).json({ message: 'Recipe not found.' })
+
+    res.status(200).json(recipe);
 });
 
 app.listen('3000', () => {
