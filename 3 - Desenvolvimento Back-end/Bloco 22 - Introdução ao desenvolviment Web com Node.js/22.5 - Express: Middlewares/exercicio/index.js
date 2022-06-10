@@ -28,7 +28,7 @@ const validateBlankProductName = (req, res, next) => {
   next();
 }
 
-const validateBlankinfo = (req, res, next) => {
+const validateBlankInfo = (req, res, next) => {
   const { infos } = req.body;
 
   if (!infos) {
@@ -39,28 +39,64 @@ const validateBlankinfo = (req, res, next) => {
   next();
 }
 
+const validateBlankDate = (req, res, next) => {
+  const { infos: { saleDate } } = req.body;
+
+  if (!saleDate) {
+    res.status(400).json({ message: "O campo saleDate é obrigatório!" });
+    return 
+  }
+
+  next();
+}
+
+const validateBlankWarrantyPeriod = (req, res, next) => {
+  const { infos: { warrantyPeriod } } = req.body;
+
+  if (!warrantyPeriod) {
+    res.status(400).json({ message: "O campo warrantyPeriod é obrigatório!" });
+    return 
+  }
+
+  next();
+}
+
 const validateDate = (req, res, next) => {
   const { infos : { saleDate } } = req.body;
 
   if (!saleDate.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)) {
-    res.status(400).json({ message: "Formato da saleDate é inválido!" });
+    res.status(400).json({ message: "O campo saleDate não é uma data válida!" });
     return
   }
 
   next();
-} 
+}
+
+const validateWarrantyPeriod = (req, res, next) => {
+  const { infos : { warrantyPeriod } } = req.body;
+
+  if (warrantyPeriod > 3 || warrantyPeriod < 1) {
+    res.status(400).json({ message: "O campo warrantyPeriod não é um período válido!" });
+    return
+  }
+
+  next();
+}
 
 app.post('/sales', [
   validateBlankProductName,
-  validateBlankinfo,
+  validateBlankInfo,
+  validateBlankDate,
+  validateBlankWarrantyPeriod,
   validateProductNameLength,
   validateDate,
+  validateWarrantyPeriod,
   (req, res) => {
     const product = req.body;
   
     products.push(product);
   
-    res.status(200).json(products);
+    res.status(201).json({ "message": "Venda cadastrada com sucesso" });
   }
 ]);
 
