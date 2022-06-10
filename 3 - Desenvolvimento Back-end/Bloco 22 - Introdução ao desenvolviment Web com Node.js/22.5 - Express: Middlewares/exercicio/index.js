@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const generateToken = require('./token');
 
 const app = express();
 app.use(bodyParser.json());
@@ -97,8 +98,18 @@ app.post('/sales', [
     products.push(product);
   
     res.status(201).json({ "message": "Venda cadastrada com sucesso" });
-  }
-]);
+}]);
+
+app.post('/signup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+
+  if (!email || !password || !firstName || !phone) 
+    res.status(401).json({ message: 'missing fields' });
+
+  const token = generateToken();
+
+  res.status(200).json({ token })
+});
 
 app.listen(3000, () => {
   console.log('Ouvindo a porta 3000!');
