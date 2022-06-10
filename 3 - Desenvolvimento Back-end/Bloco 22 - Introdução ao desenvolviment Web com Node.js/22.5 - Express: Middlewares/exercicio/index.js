@@ -94,6 +94,10 @@ app.post('/sales', [
   validateWarrantyPeriod,
   (req, res) => {
     const product = req.body;
+    const { authorization } = req.headers;
+
+    if (authorization.length !== 16)
+      res.status(401).json({ message: 'Token inválido!' });
   
     products.push(product);
   
