@@ -11,31 +11,39 @@ Exemplo: 2.1 - Bloco 2, dia 1.
 
 Entre os módulos, estão os conteúdos abaixo:
 
-1) Módulo de Fundamentos:
- ‣ Git, GitHub;
- ‣ HTML, CSS, JavaScript;
- ‣ Unit Tests (Jest).
+<h3>‣ Módulo de Fundamentos:</h3>
+ <ol>
+   <li>Git, GitHub;</li>
+   <li>HTML, CSS, JavaScript;</li>
+   <li>Unit Tests (Jest).</li>
+ </ol>
 
-2) Módulo Front End:
- ‣ Fetch API;
- ‣ ReactJS;
- ‣ Single Page Aplications (SPA) com React Router DOM;
- ‣ React Testing Library;
- ‣ Redux;
- ‣ Context API;
- ‣ React Hooks.
+<h3>‣ Módulo Front End:</h3>
+ <ol>
+   <li>Fetch API;</li>
+   <li>ReactJS;</li>
+   <li>Single Page Aplications (SPA) com React Router DOM;</li>
+   <li>React Testing Library;</li>
+   <li>Redux;</li>
+   <li>Context API;</li>
+   <li>React Hooks.</li>
+ </ol>
 
-3) Módulo de Back End:
- ‣ Docker;
- ‣ MySQL;
- ‣ NodeJS;
- ‣ TypeScript;
- ‣ SOLID e POO;
- ‣ MongoDB.
+<h3>‣ Módulo Back End:</h3>
+ <ol>
+   <li>Docker;</li>
+   <li>MySQL;</li>
+   <li>NodeJS;</li>
+   <li>TypeScript;</li>
+   <li>SOLID e POO;</li>
+   <li>MongoDB.</li>
+ </ol>
 
-4) Módulo de Ciência da Computação:
- ‣ Introdução a Python;
- ‣ Padrão de Projeto (Design Pattern);
- ‣ Redes e Raspagem de dados;
- ‣ Algoritmos;
- ‣ Estrutura de dados.
+<h3>‣ Módulo de Ciência da Computação:</h3>
+ <ol>
+   <li>Introdução a Python;</li>
+   <li>Padrão de Projeto (Design Pattern);</li>
+   <li>Redes e Raspagem de dados;</li>
+   <li>Algoritmos;</li>
+   <li>Estrutura de dados.</li>
+ </ol>
