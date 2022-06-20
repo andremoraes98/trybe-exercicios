@@ -5,15 +5,37 @@ const generateToken = require('./crypto');
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/user/register', (req, res) => {
-  const { username, email, password } = req.body;
+const validateUsername = (req, res, next) => {
+  const { username } = req.body;
 
-  if (username.length <= 3 || password.length < 4 || password.length > 8 || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+  if (username.length <= 3) {
     return res.status(400).json({ "message": "invalid data" });
   }
 
-  res.status(201).json({ "message": "user created" });
-});
+  next();
+}
+
+const validatePassword = (req, res, next) => {
+  const { password } = req.body;
+
+  if (password.length < 4 || password.length > 8 ) {
+    return res.status(400).json({ "message": "invalid data" });
+  }
+
+  next();
+}
+
+const validateEmail = (req, res, next) => {
+  const { email } = req.body;
+
+  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    return res.status(400).json({ "message": "invalid data" });
+  }
+
+  next();
+}
+
+app.post('/user/register', validateUsername, validatePassword, validateEmail, (_req, res) => res.status(201).json({ "message": "user created" }));
 
 app.post('/user/login', (req, res) => {
   const { email, password } = req.body;
