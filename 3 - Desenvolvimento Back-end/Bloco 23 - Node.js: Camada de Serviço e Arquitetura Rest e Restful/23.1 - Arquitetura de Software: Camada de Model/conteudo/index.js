@@ -28,6 +28,21 @@ app.get('/books/search', async (req, res) => {
   }
 });
 
+app.get('/books/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const books = await Books.getBooksById(id);
+  
+    if (!books) res.status(404).json({ message: 'Not Found'});
+  
+    res.status(200).json(books);
+  } catch(e) {
+    res.status(500).json({ error: `Algo deu errado pelo motivo: ${e}`})
+  }
+
+});
+
 app.listen(PORT, () => {
 	console.log(`Ouvindo a porta ${PORT}`);
 });
