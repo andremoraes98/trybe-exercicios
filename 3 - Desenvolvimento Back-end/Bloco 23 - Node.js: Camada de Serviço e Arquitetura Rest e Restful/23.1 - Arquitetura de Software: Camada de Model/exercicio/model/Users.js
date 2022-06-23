@@ -44,9 +44,21 @@ const getUserById = async (id) => {
   return user[0].map(serialize);
 };
 
+const updateUserById = async (user, id) => {
+  const query = 'UPDATE model_example.users SET first_name = ?, last_name = ?, email = ? , password = ? WHERE id = ?'
+
+  const status = await connection.execute(
+    query,
+    [user.firstName, user.lastName, user.email, user.password, id]
+  );
+
+  return status;
+}
+
 module.exports = {
   getAll,
   isUserValid,
   createUser,
-  getUserById
+  getUserById,
+  updateUserById
 };
