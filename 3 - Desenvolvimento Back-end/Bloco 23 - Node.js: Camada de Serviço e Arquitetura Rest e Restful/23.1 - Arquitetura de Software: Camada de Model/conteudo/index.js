@@ -50,11 +50,13 @@ app.get('/books/:id', async (req, res) => {
   }
 });
 
-app.post('/books', (req, res) => {
+app.post('/books', async (req, res) => {
   const { title, author_id } = req.body;
 
   if (!Books.isBookValid(title, author_id))
     return res.status(404).json({ message: 'Dados inválidos'});
+  
+  await Books.createBook(title, author_id);
 
   res.status(201).json({ message: 'Autor criado com sucesso!'});
 });
