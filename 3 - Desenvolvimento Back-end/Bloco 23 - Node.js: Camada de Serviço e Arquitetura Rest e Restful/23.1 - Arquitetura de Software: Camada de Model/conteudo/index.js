@@ -5,6 +5,8 @@ const Books = require('./models/Books');
 
 const app = express();
 
+app.use(express.json())
+
 const PORT = process.env.PORT || 3000;
 
 app.get('/authors', async (_req, res) => {
@@ -15,6 +17,12 @@ app.get('/authors', async (_req, res) => {
   } catch (e) {
     res.status(500).json({ erro: `Algo deu errado por causa de: ${e}`})
   }
+});
+
+app.get('/books', async (_req, res) => {
+  const books = await Books.getAll();
+
+  res.status(200).json(books);
 });
 
 app.get('/books/search', async (req, res) => {
@@ -34,13 +42,21 @@ app.get('/books/:id', async (req, res) => {
 
     const books = await Books.getBooksById(id);
   
-    if (!books) res.status(404).json({ message: 'Not Found'});
+    if (!books) return res.status(404).json({ message: 'Not Found'});
   
     res.status(200).json(books);
   } catch(e) {
     res.status(500).json({ error: `Algo deu errado pelo motivo: ${e}`})
   }
+});
 
+app.post('/books', (req, res) => {
+  const { title, author_id } = req.body;
+
+  if (!Books.isBookValid(title, author_id))
+    return res.status(404).json({ message: 'Dados inválidos'});
+
+  res.status(201).json({ message: 'Autor criado com sucesso!'});
 });
 
 app.listen(PORT, () => {
