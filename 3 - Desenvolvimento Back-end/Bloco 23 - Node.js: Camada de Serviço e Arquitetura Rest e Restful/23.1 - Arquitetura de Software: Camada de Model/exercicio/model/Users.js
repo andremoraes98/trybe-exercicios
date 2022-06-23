@@ -8,7 +8,7 @@ const serialize = (user) => {
     email: user.email,
     password: user.password,
   }
-}
+};
 
 const getAll = async () => {
   const [users] = await connection.execute(
@@ -24,7 +24,7 @@ const isUserValid = ({ firstName, lastName, email, password }) => {
   if (!email || typeof email !== 'string') return false; 
   if (!password || typeof password !== 'string') return false;
   return true 
-}
+};
 
 const createUser = async ({ firstName, lastName, email, password }) => {
   const status = connection.execute(
@@ -33,10 +33,20 @@ const createUser = async ({ firstName, lastName, email, password }) => {
   );
 
   return status;
-}
+};
+
+const getUserById = async (id) => {
+  const user = await connection.execute(
+    'SELECT id, first_name, last_name, email, password FROM model_example.users WHERE id = ?',
+    [id]
+  );
+
+  return user[0].map(serialize);
+};
 
 module.exports = {
   getAll,
   isUserValid,
-  createUser
+  createUser,
+  getUserById
 };

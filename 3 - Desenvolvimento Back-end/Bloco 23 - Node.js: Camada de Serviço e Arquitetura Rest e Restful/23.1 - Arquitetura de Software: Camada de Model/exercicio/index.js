@@ -32,6 +32,19 @@ app.post('/user', validatePassword, async (req, res) => {
   });
 });
 
+app.get('/user/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const [user] = await Users.getUserById(Number(id));
+
+  if (!user) return res.status(404).json({
+    error: true,
+    message: 'Usuário não encontrado'
+  });
+
+  res.status(200).json(user);
+});
+
 app.listen(3000, () => {
   console.log('Online na porta 3000!')
 });
