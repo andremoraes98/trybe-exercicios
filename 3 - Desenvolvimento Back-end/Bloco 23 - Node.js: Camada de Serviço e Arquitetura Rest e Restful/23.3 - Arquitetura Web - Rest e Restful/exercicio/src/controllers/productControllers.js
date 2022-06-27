@@ -29,7 +29,7 @@ router.delete('/delete/:id', async (req, res) => {
 
   const product = await ProductModel.exclude(id);
 
-  return res.status(200).json(product);
+  return res.status(204);
 });
 
 router.put('/update/:id', async (req, res) => {
@@ -38,7 +38,7 @@ router.put('/update/:id', async (req, res) => {
 
   const product = await ProductModel.update(id, name, brand);
 
-  return res.status(200).json(product);
+  return res.status(201).json(product);
 });
 
 module.exports = router;
