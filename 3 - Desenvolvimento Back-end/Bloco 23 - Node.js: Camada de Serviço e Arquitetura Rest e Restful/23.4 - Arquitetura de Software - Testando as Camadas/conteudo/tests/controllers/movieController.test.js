@@ -1,9 +1,8 @@
 const { express, expect } = require('chai');
 const sinon = require('sinon');
 
-const MovieController = {
-  create: () => {}
-}
+const MovieController = require('../../src/controllers/movieController.js');
+const MovieService = require('../../src/services/movieService.js');
 
 describe('Ao chamar o controller de create', () => {
   const response = {};
@@ -14,6 +13,12 @@ describe('Ao chamar o controller de create', () => {
 
     response.status = sinon.stub().returns(response);
     response.send = sinon.stub().returns();
+
+    sinon.stub(MovieService, 'create').returns(false);
+  });
+
+  after(() => {
+    MovieService.create.restore();
   });
 
   it('é chamado o status com o código 400', async () => {
@@ -42,6 +47,12 @@ describe('quando é inserido com sucesso', () => {
 
     response.status = sinon.stub().returns(response);
     response.send = sinon.stub().returns();
+
+    sinon.stub(MovieService, 'create').returns(true);
+  });
+
+  after(() => {
+    MovieService.create.restore();
   });
 
   it('é chamado o status com o código 201', async () => {
