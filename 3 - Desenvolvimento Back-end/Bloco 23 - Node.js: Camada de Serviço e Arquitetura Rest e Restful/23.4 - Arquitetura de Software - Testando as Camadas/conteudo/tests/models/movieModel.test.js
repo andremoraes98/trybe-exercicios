@@ -1,8 +1,8 @@
+const sinon = require('sinon');
 const { expect } = require('chai');
 
-const MoviesModel = {
-  create: () => {}
-};
+const connection = require('../../src/models/connection.js');
+const MoviesModel = require('../../src/models/movieModel.js');
 
 describe('Insere um novo filme no DB', () => {
   const payloadMovie = {
@@ -10,6 +10,16 @@ describe('Insere um novo filme no DB', () => {
     directedBy: 'Jane Dow',
     releaseYear: 1999,
   };
+
+  before(async () => {
+    const execute = [{ insertId: 1 }]; // retorno esperado nesse teste
+
+    sinon.stub(connection, 'query').resolves(execute);
+  });
+
+  after(async () => {
+    connection.query.restore();
+  });
 
   describe('quando é inserido com sucesso', () => {
     it('retorna um objeto', async () => {
