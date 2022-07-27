@@ -5,13 +5,13 @@ import Seasons from "./exercicio3";
 
 const monthsValues = Object.values(Months);
 
-const setMonth = readLine.keyInSelect(monthsValues, 'Qual o mês deseja saber a estação?');
+const indexMonth = readLine.keyInSelect(monthsValues, 'Qual o mês deseja saber a estação?');
 
 const North = {
-  Verão: [Months.JUNHO, Months.JULHO, Months.AGOSTO, Months.SETEMBRO],
-  Inverno: [Months.DEZEMBRO, Months.JANEIRO, Months.FEVEREIRO, Months.MARCO],
-  Primavera: [Months.MARCO, Months.ABRIL, Months.MAIO, Months.JUNHO],
-  Outono: [Months.SETEMBRO, Months.OUTUBRO, Months.NOVEMBRO, Months.DEZEMBRO],
+  [Seasons.VERÃO]: [Months.JUNHO, Months.JULHO, Months.AGOSTO, Months.SETEMBRO],
+  [Seasons.INVERNO]: [Months.DEZEMBRO, Months.JANEIRO, Months.FEVEREIRO, Months.MARCO],
+  [Seasons.PRIMAVERA]: [Months.MARCO, Months.ABRIL, Months.MAIO, Months.JUNHO],
+  [Seasons.OUTONO]: [Months.SETEMBRO, Months.OUTUBRO, Months.NOVEMBRO, Months.DEZEMBRO],
 };
 
 const South = {
@@ -21,11 +21,17 @@ const South = {
   Outono: North.Primavera,
 };
 
-const hemisphere = {
+const seasonsByHemisphere = {
   North,
-  South
-};
+  South,
+}
 
-const setHemisphere = readLine.keyInSelect(Object.keys(hemisphere), 'Qual o hemisfério deseja saber a estação?');
+const hemisphereValues = Object.keys(seasonsByHemisphere);
 
-console.log(hemisphere[setHemisphere][]);
+const setHemisphere = readLine.keyInSelect(hemisphereValues, 'Qual o hemisfério deseja saber a estação?');
+
+Object.entries(seasonsByHemisphere[hemisphereValues[setHemisphere]]).map((season) => {
+  if (season[1].includes(monthsValues[indexMonth])) {
+    console.log(`A estação é: ${season[0]}`)
+  }
+});

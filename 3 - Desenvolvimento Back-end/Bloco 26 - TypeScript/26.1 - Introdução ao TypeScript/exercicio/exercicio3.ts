@@ -2,7 +2,7 @@ enum Seasons {
   VERÃO='Verão',
   INVERNO='Inverno',
   PRIMAVERA='Primavera',
-  OUTONO='Outonos',
+  OUTONO='Outono',
 }
 
 export default Seasons;
