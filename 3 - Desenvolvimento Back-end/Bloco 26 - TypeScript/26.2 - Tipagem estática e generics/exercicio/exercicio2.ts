@@ -11,5 +11,5 @@ uberCar.speedUp();
 uberCar.turn(Direction.DIREITA);
 uberCar.speedDown();
 uberCar.stop();
-uberCar.openTheDoor(1);
-uberCar.closeTheDoor(1);
+uberCar.openTheDoor(3);
+uberCar.closeTheDoor(3);
