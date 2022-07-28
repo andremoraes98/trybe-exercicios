@@ -1,16 +1,21 @@
-enum Color {
+export enum Color {
   PRETA='Preta',
   BRANCA='Branca',
   VERMELHA='Vermelha',
   PRATA='Prata'
 }
 
-class Car {
+export enum Direction {
+  ESQUERDA='Esquerda',
+  DIREITA='Direita',
+}
+
+export class Car {
   _brand: string;
   _color: Color;
   _doors: number;
 
-  constructor(brand: string, color: Color, doors:number) {
+  constructor(brand: string, color: Color, doors: number) {
     this._brand = brand;
     this._color = color;
     this._doors = doors;
@@ -48,7 +53,7 @@ class Car {
     console.log('O carro parou!')
   }
 
-  turn(direction: string): void {
+  turn(direction: Direction): void {
     console.log(`O carro virou a ${direction}!`)
   }
 }
