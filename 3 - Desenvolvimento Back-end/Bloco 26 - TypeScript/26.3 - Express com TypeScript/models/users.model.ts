@@ -1,7 +1,7 @@
 import { Pool } from "mysql2/promise";
 import User from '../interfaces/users.interface'
 
-export default class BookModel {
+export default class UserModel {
   public connection: Pool;
 
   constructor(connection: Pool) {
