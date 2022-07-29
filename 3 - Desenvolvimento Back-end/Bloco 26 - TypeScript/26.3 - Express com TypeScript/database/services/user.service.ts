@@ -1,5 +1,5 @@
 import connection from "../models/connection";
-import User from '../interfaces/users.interface'
+import User from '../../interfaces/users.interface'
 import UserModel from "../models/users.model";
 
 class UserService {
