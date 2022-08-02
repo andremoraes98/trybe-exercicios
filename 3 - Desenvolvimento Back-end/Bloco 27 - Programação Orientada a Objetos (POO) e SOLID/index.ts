@@ -1,40 +1,67 @@
 class Student {
   public registration: string;
   public nome: string;
-  private math: number;
-  private port: number;
-  private geo: number;
-  private hist: number;
-  private trab1: number;
-  private trab2: number;
+  private _math: number;
+  private _port: number;
+  private _geo: number;
+  private _hist: number;
+  private _trab1: number;
+  private _trab2: number;
 
   constructor(
-    r: string,
-    n: string,
-    m: number,
-    p: number,
-    g: number,
-    h: number,
-    t1: number,
-    t2: number,
+    registration: string,
+    nome: string,
+    math: number,
+    port: number,
+    geo: number,
+    hist: number,
+    work1: number,
+    work2: number,
   ) {
-    this.registration = r;
-    this.nome = n;
-    this.math = m;
-    this.port = p;
-    this.geo = g;
-    this.hist = h;
-    this.trab1 = t1;
-    this.trab2 = t2;
+    this.registration = registration;
+    this.nome = nome;
+    this._math = math;
+    this._port = port;
+    this._geo = geo;
+    this._hist = hist;
+    this._trab1 = work1;
+    this._trab2 = work2;
   }
 
   public sumNotes = (): number => {
-    const sum = this.math + this.port + this.geo + this.hist + this.trab1 + this.trab2;
+    const sum = this._math + this._port + this._geo + this._hist + this._trab1 + this._trab2;
     return sum;
   }
 
   public averageNotes = (): number => {
-    const average = (this.math + this.port + this.geo + this.hist + this.trab1 + this.trab2) / 6;
+    const average = (this._math + this._port + this._geo + this._hist + this._trab1 + this._trab2) / 6;
     return average;
+  }
+}
+
+class PersonLunch {
+  public name:string;
+  
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+class ItemOrdered extends PersonLunch {
+  private _price: number;
+
+  constructor(name:string, price: number) {
+    super(name);
+    this._price = price;
+  }
+}
+
+class Order {
+  public person: PersonLunch;
+  public items: ItemOrdered[];
+
+  constructor(person: PersonLunch, items: ItemOrdered[]) {
+    this.person = person;
+    this.items = items;
   }
 }
