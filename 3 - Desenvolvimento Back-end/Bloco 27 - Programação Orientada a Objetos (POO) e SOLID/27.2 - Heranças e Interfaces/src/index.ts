@@ -1,7 +1,10 @@
 import Student from './Student';
+import Subject from './Subject';
 
-const andre = new Student('André', '06/12/1998')
-const julia = new Student('Júlia', '10/04/2000')
+const math = new Subject('Matemática');
+const hist = new Subject('História');
+const phi = new Subject('Filosofia');
 
-console.log(andre);
-console.log(julia);
+console.log(math);
+console.log(hist);
+console.log(phi);
