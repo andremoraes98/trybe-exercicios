@@ -1,40 +1,88 @@
-export default class Student {
-  public registration: string;
-  public nome: string;
-  private _math: number;
-  private _port: number;
-  private _geo: number;
-  private _hist: number;
-  private _trab1: number;
-  private _trab2: number;
+import Person from './Person';
 
-  constructor(
-    registration: string,
-    nome: string,
-    math: number,
-    port: number,
-    geo: number,
-    hist: number,
-    work1: number,
-    work2: number,
-  ) {
-    this.registration = registration;
-    this.nome = nome;
-    this._math = math;
-    this._port = port;
-    this._geo = geo;
-    this._hist = hist;
-    this._trab1 = work1;
-    this._trab2 = work2;
+export default class Student extends Person {
+  public enrollment: string;
+  private _math: number = 0;
+  private _port: number = 0;
+  private _geo: number = 0;
+  private _hist: number = 0;
+  private _examsGrades: number[] = [0, 0, 0, 0];
+  private _worksGrades: number[] = [0, 0];
+
+  constructor(nome: string, birthDate: string) {
+    super(nome, birthDate);
+    this.enrollment = this.generateEnrollment();
   }
 
-  public sumNotes = (): number => {
-    const sum = this._math + this._port + this._geo + this._hist + this._trab1 + this._trab2;
+  get math(): number {
+    return this._math;
+  }
+
+  get port(): number {
+    return this._port;
+  }
+
+  get geo(): number {
+    return this._geo;
+  }
+
+  get hist(): number {
+    return this._hist;
+  }
+
+  get examsGrades(): number[] {
+    return this._examsGrades;
+  }
+
+  get worksGrades(): number[] {
+    return this._worksGrades;
+  }
+
+  set math(newNote: number) {
+    this._math = newNote;
+  }
+
+  set port(newNote: number) {
+    this._port = newNote;
+  }
+
+  set geo(newNote: number) {
+    this._geo = newNote;
+  }
+
+  set hist(newNote: number) {
+    this._hist = newNote;
+  }
+
+  set examsGrades(newNotes: number[]) {
+    if (newNotes.length === 2) {
+      this._examsGrades = newNotes;
+    }
+  }
+
+  set worksGrades(newNotes: number[]) {
+    if (newNotes.length === 4) {
+      this._worksGrades = newNotes;
+    }
+  }
+
+  private generateEnrollment(): string {
+    const actualYear = new Date().getFullYear();
+    const randomNumber = (Math.random() * 1000000000000).toFixed(0);
+    return `${actualYear}${randomNumber}`
+  }
+
+  public sumGrades = (): number => {
+    const averageExams = this._examsGrades
+      .reduce((acc, note) => acc =+ note, 0) / this._examsGrades.length;
+    const averageWorks = this._worksGrades
+      .reduce((acc, note) => acc =+ note, 0) / this._worksGrades.length;
+    const sum = this._math + this._port + this._geo + this._hist + averageWorks + averageExams;
     return sum;
   }
 
-  public averageNotes = (): number => {
-    const average = (this._math + this._port + this._geo + this._hist + this._trab1 + this._trab2) / 6;
+  public sumAverageGrade = (): number => {
+    const average = this.sumGrades() / 6;
     return average;
   }
 }
