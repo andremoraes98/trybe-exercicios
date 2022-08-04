@@ -4,10 +4,11 @@ import Person from './Person';
 export default class Student extends Person implements Enrollable {
   private _examsGrades: number[] = [0, 0, 0, 0];
   private _worksGrades: number[] = [0, 0];
+  private _enrollment: string;
 
   constructor(nome: string, birthDate: string) {
     super(nome, birthDate);
-    this.enrollment = this.generateEnrollment();
+    this._enrollment = this.generateEnrollment();
   }
 
   get examsGrades(): number[] {
@@ -30,13 +31,13 @@ export default class Student extends Person implements Enrollable {
     }
   }
 
-  get enrollment(): string {
-    return this.enrollment
+  get enrollment() {
+    return this._enrollment
   }
 
-  set enrollment(newValue: string) {
-    newValue.length >= 16 
-      ? this.enrollment = newValue
+  set enrollment(newEnrollment: string) {
+    newEnrollment.length >= 16
+      ? this._enrollment = newEnrollment
       : null
   }
 

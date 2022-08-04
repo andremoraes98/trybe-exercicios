@@ -4,10 +4,11 @@ import Person from "./Person";
 export default abstract class Employee extends Person implements Enrollable {
   private salary: number;
   private admissionDate: Date;
+  private _enrollment: string;
 
   constructor(nome: string, birthDate: string, salary: number, admissionDate: string) {
     super(nome, birthDate);
-    this.enrollment = this.generateEnrollment();
+    this._enrollment = this.generateEnrollment();
     
     this.isSalaryValid(salary)
       ? this.salary = salary
@@ -17,17 +18,17 @@ export default abstract class Employee extends Person implements Enrollable {
       : this.admissionDate = new Date('01/01/2000');
   }
 
-  get enrollment(): string {
-    return this.enrollment
+  get enrollment() {
+    return this._enrollment
   }
 
-  set enrollment(newValue: string) {
-    newValue.length >= 16 
-      ? this.enrollment = newValue
+  set enrollment(newEnrollment: string) {
+    newEnrollment.length >= 16
+      ? this._enrollment = newEnrollment
       : null
   }
 
-  public generateEnrollment(): string {
+  generateEnrollment(): string {
     const actualYear = new Date().getFullYear();
     const randomNumber = (Math.random() * 1000000000000).toFixed(0);
     const stringRegistration = `${actualYear}${randomNumber}`
