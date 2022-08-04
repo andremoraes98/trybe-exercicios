@@ -35,8 +35,8 @@ export default class Person {
   private isDateValid(date: string | Date): boolean {
     const yearToday = new Date().getFullYear();
     const newDateYear = date instanceof Date
-    ? date.getFullYear()
-    : new Date(date).getFullYear()
+      ? date.getFullYear()
+      : new Date(date).getFullYear()
     return newDateYear < yearToday && yearToday - newDateYear <= 120;
   }
 
