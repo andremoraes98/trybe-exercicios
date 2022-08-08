@@ -1,23 +1,14 @@
-// Plants.ts
-
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import fs from 'fs/promises';
-
-interface IPlant {
-  id: string,
-  breed: string,
-  needsSun: boolean,
-  origin: string,
-  size: number,
-  specialCare?: { waterFrequency: number }
-}
-
-interface IOpsInfo { createdPlants: number }
+import IPlant from '../interface/IPlant';
+import IOpsInfo from '../interface/IOpsInfo';
 
 class Plants {
   private readonly plantsFile = 'plantsData.json';
   private readonly opsFile = 'opsInfo.json';
 
-  public initPlant(plant: IPlant): IPlant {
+  public initPlant = (plant: IPlant): IPlant => {
     const { id, breed, needsSun, origin, specialCare, size } = plant;
     const waterFrequency = needsSun
       ? size * 0.77 + (origin === 'Brazil' ? 8 : 7)
@@ -39,7 +30,7 @@ class Plants {
   }
 
   public async getPlants(): Promise<IPlant[]> {
-    const plantsRaw = await fs.readFile(this.plantsFile, { encoding: 'utf8' });
+    const plantsRaw = await fs.readFile(`../${this.plantsFile}`, { encoding: 'utf8' });
     const plants: IPlant[] = JSON.parse(plantsRaw);
     return plants;
   }
