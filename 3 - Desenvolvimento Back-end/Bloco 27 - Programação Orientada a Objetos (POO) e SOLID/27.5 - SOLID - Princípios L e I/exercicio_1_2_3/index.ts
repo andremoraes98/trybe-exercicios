@@ -1,9 +1,7 @@
 import CepService from './CepService';
-import FooCepAPI from './FooCepAPI';
 
 async function main() {
-  const fooCep = new FooCepAPI();
-  const cepSvc = new CepService(fooCep);
+  const cepSvc = new CepService();
 
   console.log(
     'get address by cep', 

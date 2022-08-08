@@ -1,9 +1,10 @@
 import FooCepAPI from './FooCepAPI';
+import GenericCep from './GenericCep';
 
 class CepService {
-  private readonly cepApi: FooCepAPI;
+  private readonly cepApi: GenericCep;
 
-  constructor(cepApi: FooCepAPI) {
+  constructor(cepApi: GenericCep = new FooCepAPI()) {
     this.cepApi = cepApi;
   }
 
