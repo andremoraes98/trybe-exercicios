@@ -1,4 +1,12 @@
-def remember_numbers(expression):
+import re
+
+def remember_numbers(expression: str):
+    pattern = re.compile(r'[A-Z10-]')
+    expression_pattern = pattern.findall(expression)
+
+    if len(expression_pattern) == 0:
+        raise ValueError('A expressão deve conter apenas letras maiúsculas, 1, 0 ou hífen!')
+
     codes = {
         'ABC': '2',
         'DEF': '3',
