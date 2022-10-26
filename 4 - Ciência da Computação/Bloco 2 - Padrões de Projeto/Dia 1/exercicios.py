@@ -28,3 +28,27 @@ class TV:
       self.__ligada = False
     else:
       self.__ligada = True
+
+
+class Estatistica:
+  numbers = []
+  length_total = 0
+
+  def __init__(self, numbers: list) -> None:
+    Estatistica.numbers = numbers
+    Estatistica.length_total = len(numbers)
+    
+  @classmethod
+  def media(cls):
+    total_numbers = 0
+    for number in Estatistica.numbers:
+      total_numbers += number
+    return total_numbers / Estatistica.length_total
+
+  @classmethod
+  def mediana(cls):
+    sorted_numbers = sorted(Estatistica.numbers)
+    if Estatistica.length_total % 2 == 0:
+      return (sorted_numbers[Estatistica.length_total//2] + sorted_numbers[(Estatistica.length_total//2) - 1]) / 2
+    else:
+      return sorted_numbers[Estatistica.length_total//2]
